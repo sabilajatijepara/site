@@ -1,0 +1,80 @@
+{
+  "welcome": "Welcome to our website",
+  "About": "About Us",
+  "Contact": "Contact",
+  "How To Order": "How To Order",
+  "language": "Language",
+  "AboutFoo": "We are a manufacturer of school tables and chairs, cafe tables and chairs, as well as gazebos and bungalows.",
+  "Info About": "We are a manufacturer of school tables and chairs, cafe tables and chairs, as well as gazebos and bungalows. Originated from Jepara.",
+  "Find Us": "Find Us",
+  "Category": "Category",
+  "Home": "Home",
+  "Buy WA": "Buy via WhatsApp",
+  "Loading": "Loading..",
+  "Location": "Location",
+  "No Product": "Tidak Ada Produk",
+  "Product NF": "Product not found",
+  "Other Product": "Other Products",
+  "Description": "Description",
+  "Start From": "Start From",
+  "Make Furniture": "Want to Make Your Dream Furniture?",
+  "Contact Now": "Contact Us Now!",
+  "Search Product": "Search Product",
+  "How Order Alert": "If you want to order custom furniture with a different design, feel free to chat with us on our WhatsApp number.",
+  "How Order 0": "How to order on this site is very easy, here's how.",
+  "How Order 1": "Search for the product you want to buy.",
+  "How Order 2": "If you have found the product you want to buy, click the Buy Via WhatsApp button.",
+  "How Order 3": "Once you click the button, it will automatically redirect you to our official WhatsApp number.",
+  "How Order 4": "The message will be automatically filled in, but you can edit the message content or directly press the send button on the WhatsApp application.",
+  "How Order 5": "We will respond to your message as soon as possible.",
+  "Happy Shopping": "Happy shopping!",
+  "waText": "Hello! I want to order {product}",
+  "Next": "Next",
+  "Previous": "Previous",
+  "faqs": [
+    {
+      "question": "What types of furniture are available?",
+      "answer": "We provide various types of furniture such as school desks and chairs, cafe tables and chairs, gazebos, bungalows, and custom furniture as per request."
+    },
+    {
+      "question": "Can I order custom furniture designs?",
+      "answer": "Yes, we accept custom orders based on the desired design, size, and materials. Please contact us for further consultation."
+    },
+    {
+      "question": "How long does it take to produce custom furniture?",
+      "answer": "Production time varies depending on the type and complexity of the design. Generally, it takes about 2-4 weeks."
+    },
+    {
+      "question": "Is a down payment (DP) required before production?",
+      "answer": "Yes."
+    },
+    {
+      "question": "Does the listed price include shipping costs?",
+      "answer": "The listed price does not include shipping costs. The shipping fee will be adjusted according to the destination location."
+    },
+    {
+      "question": "Can you ship all over Indonesia and Worldship?",
+      "answer": "Yes, we can ship throughout Indonesia using trusted shipping partners."
+    },
+    {
+      "question": "What if the product received is damaged or defective?",
+      "answer": "If there is damage due to production or shipping, please contact us within 24 hours of receiving the item, along with photos or videos as proof."
+    },
+    {
+      "question": "Is there a physical store that can be visited?",
+      "answer": "Yes, you can visit our showroom/workshop in Jepara."
+    }
+  ],
+  "slider": {
+    "slide1": {
+      "title": "Redefining Space with Modern Design",
+      "description": "solutions for cafes, schools, living spaces, and outdoor environments.",
+      "button": "Get in Touch"
+    },
+    "slide2": {
+      "title": "Top Quality",
+      "description": "Crafted with premium materials",
+      "button": "View Details"
+    }
+  }
+}
