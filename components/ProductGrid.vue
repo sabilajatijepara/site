@@ -1,6 +1,45 @@
 <template>
-  <div>
-    
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div
+      v-for="(item, index) in products"
+      :key="index"
+      :class="[
+        'relative h-64 rounded-lg overflow-hidden group cursor-pointer',
+        (index === products.length - 1 && products.length % 2 !== 0)
+          ? 'md:col-span-2'
+          : ''
+      ]"
+    >
+      <!-- Background image -->
+      <img
+        :src="item.image"
+        :alt="item.name"
+        class="absolute inset-0 w-full h-full object-cover transition duration-300"
+      />
+
+      <!-- Gradient overlay on hover -->
+      <div
+        class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"
+      ></div>
+
+      <!-- Text and link on hover -->
+      <div
+        class="absolute bottom-4 left-4 text-white duration-300 p-2 md:px-4 md:py-4"
+      >
+        <h3 class="text-xl md:text-2xl font-semibold">{{ item.name }}</h3>
+        <div class="py-1"></div>
+        <p class="text-sm">{{ item.description }}</p>
+        <div class="py-2"></div>
+        <div class="flex justify-between">
+          <div>Rp 12.000</div>
+          <div>
+            <NuxtLink :to="item.link" class="text-sm px-3 py-2 rounded-full bg-white text-black">
+              View Product
+            </NuxtLink>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 

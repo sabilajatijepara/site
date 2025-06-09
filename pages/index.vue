@@ -126,7 +126,22 @@
           Discover our most popular furniture pieces, designed with quality and style in mind.
         </div>
         <div class="py-4 md:py-8">
-          
+          <ProductGrid />
+        </div>
+      </div>
+    </section>
+    <section class="container mx-auto px-4 py-6">
+      <div>
+        <div class="py-4"></div>
+        <div class="text-center font-bold text-3xl md:text-4xl">
+          Testimonials
+        </div>
+        <div class="py-2 md:py-4"></div>
+        <div class="text-center text-md">
+          Hear from businesses and individuals who have transformed their spaces with our furniture.
+        </div>
+        <div class="py-4 md:py-8">
+          <Testimoni />
         </div>
       </div>
     </section>

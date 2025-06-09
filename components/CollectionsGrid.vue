@@ -43,31 +43,31 @@ const collections = [
   {
     name: 'Cafe',
     description: 'Stylish and durable furniture for cafes, restaurants, and bistros.',
-    image: 'https://res.cloudinary.com/dwn4gzaqp/image/upload/v1747188213/file-CBRwQrKonVtvYBFXQPAeWA_lylmqn.webp',
+    image: 'https://res.cloudinary.com/dwn4gzaqp/image/upload/v1747707202/file-Prjq2hQmDX1HZAPKRXtoHm_hniqzt.webp',
     link: '/category/cafe'
   },
   {
     name: 'Home Living',
     description: 'Comfortable and elegant furniture for residential spaces.',
-    image: 'https://res.cloudinary.com/dwn4gzaqp/image/upload/v1747188213/file-CBRwQrKonVtvYBFXQPAeWA_lylmqn.webp',
+    image: 'https://res.cloudinary.com/dwn4gzaqp/image/upload/v1747707202/file-5cmj8Jbt1fsn6mMZfxm5tB_zlep74.webp',
     link: '/category/home-living'
   },
   {
     name: 'School',
     description: 'Ergonomic and functional furniture for educational environments.',
-    image: 'https://res.cloudinary.com/dwn4gzaqp/image/upload/v1747188213/file-CBRwQrKonVtvYBFXQPAeWA_lylmqn.webp',
+    image: 'https://res.cloudinary.com/dwn4gzaqp/image/upload/v1747707210/file-PZ9e6iVt3DoCDEvJD6Zmh3_tqtgdl.webp',
     link: '/category/school'
   },
   {
     name: 'Bungalow',
     description: 'Complete furniture solutions for vacation homes and bungalows.',
-    image: 'https://res.cloudinary.com/dwn4gzaqp/image/upload/v1747188211/file-66wMTjmnDaGjwtAf1Svhj7_wtctoi.webp',
+    image: 'https://res.cloudinary.com/dwn4gzaqp/image/upload/v1747707202/file-3dctTAYPhHbpRnMqExehd2_ilm08u.webp',
     link: '/category/bungalow'
   },
   {
     name: 'Gazebo',
     description: 'Elegant outdoor structures perfect for gardens and patios.',
-    image: 'https://res.cloudinary.com/dwn4gzaqp/image/upload/v1747188211/file-66wMTjmnDaGjwtAf1Svhj7_wtctoi.webp',
+    image: 'https://res.cloudinary.com/dwn4gzaqp/image/upload/v1747707366/file-VUZ4ntKnAzYCLfenpvwc8e_g5bnpo.webp',
     link: '/category/gazebo'
   }
 ]
