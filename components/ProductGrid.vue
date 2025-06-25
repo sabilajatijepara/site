@@ -4,7 +4,7 @@
       v-for="(item, index) in products"
       :key="index"
       :class="[
-        'relative h-64 rounded-lg overflow-hidden group cursor-pointer',
+        'relative h-72 w-full rounded-3xl overflow-hidden group cursor-pointer',
         (index === products.length - 1 && products.length % 2 !== 0)
           ? 'md:col-span-2'
           : ''

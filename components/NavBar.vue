@@ -1,8 +1,9 @@
 <template>
   <header class="">
-    <div class="container mx-auto flex items-center justify-between p-4 rounded-2xl">
+    <div class="fixed top-0 left-0 w-full z-50 bg-gray-100/20 backdrop-blur-lg border-b-4 border-gray-100/20 rounded-b-2xl border-x-4">
+    <div class="container mx-auto flex items-center justify-between px-4 py-6">
       <!-- Logo -->
-      <h1 class="text-xl font-bold">
+      <h1 class="text-xl font-bold mix-blend-difference">
         <NuxtLinkLocale to="/">Sabilajati Jepara</NuxtLinkLocale>
       </h1>
 
@@ -37,16 +38,15 @@
         </svg>
       </button>
     </div>
+    </div>
 
     <!-- Mobile Menu -->
     <transition name="fade">
       <div
         v-if="isMenuOpen"
-        class="fixed inset-0 bg-white flex flex-col text-xl
-        px-4 py-4 z-50"
+        class="fixed inset-0 bg-white/20 backdrop-blur-3xl flex flex-col text-xl px-4 py-6 z-50"
       >
-        <div class="flex text-gray-300 focus:outline-none
-          text-2xl justify-between">
+        <div class="flex text-gray-300 focus:outline-none text-2xl justify-between">
           <div class="font-bold text-xl text-black">Sabilajati Jepara</div>
           <div class="space-x-2">
             <button

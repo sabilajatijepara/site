@@ -1,5 +1,8 @@
-<template>
+<template class="">
   <ClientOnly>
+    <div class="absolute w-full left-1/2 top-32 transform -translate-x-1/2 -translate-y-1/2 size-96 bg-gradient-to-b from-blue-200 to-transparent">
+      
+    </div>
     <swiper-container
       slides-per-view="1"
       loop="true"
@@ -8,12 +11,12 @@
       effect="fade"
       class="w-full h-96 md:h-[25vh]"
     >
-      <swiper-slide v-for="(slide, index) in slides" :key="index">
+      <swiper-slide v-for="(slide, index) in slides" :key="index" class="">
         <div
-          class="w-full h-full bg-cover bg-center relative"
+          class="w-full h-full bg-cover bg-center relative rounded-3xl"
           :style="{ backgroundImage: `url(${slide.image})` }"
         >
-          <div class="absolute inset-0 bg-black/30 flex items-center">
+          <div class="absolute inset-0 bg-black/30 flex items-center rounded-3xl">
             <div class="text-white px-8 md:px-20 container mx-auto">
               <h2 class="text-4xl md:text-6xl font-bold mb-4">{{ $t(slide.title) }}</h2>
               <p class="mb-6 text-lg">{{ $t(slide.description) }}</p>

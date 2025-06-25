@@ -1,6 +1,9 @@
 <template>
   <NavBar />
-  <SliderHome/>
+  <div class="py-12"></div>
+  <div class="px-4">
+    <SliderHome/>
+  </div>
   <div class="py-4 md:py-8">
     <div class="py-2 md:py-4"></div>
     <section class="px-6 container mx-auto">
@@ -77,7 +80,8 @@
     <div class="py-4"></div>
     <section class="container mx-auto px-6">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div class="col-span-1 md:col-span-2 bg-blue-300/50 rounded-2xl w-full overflow-hidden bg-right-bottom" style="background-image: url('https://res.cloudinary.com/dwn4gzaqp/image/upload/v1747198418/Workshop_sabilajati_mebel_jepara_xc9vav.webp')">
+        <div class="md:col-span-2 bg-blue-300/50 rounded-2xl bg-cover" style="background-image:
+        url('https://res.cloudinary.com/dwn4gzaqp/image/upload/v1750855824/living_room_uxhsfe.jpg')">
           <div class=""></div>
         </div>
         <div class="md:col-span-1 bg-black rounded-2xl py-6 px-4 text-white hover:-translate-y-2 transition duration-300 ease-in-out">
@@ -94,7 +98,7 @@
             Deliver innovative project execution, prioritize the quality of every product we create, and uphold responsibility, transparency, and reliability in all aspects of our work.
           </div>
         </div>
-        <div class="md:col-span-2 bg-blue-300/50 rounded-2xl py-6 px-4">
+        <div class="md:col-span-2 bg-blue-300/50 rounded-2xl py-6 px-4 bg-cover h-auto" style="background-image: url('https://res.cloudinary.com/dwn4gzaqp/image/upload/v1750855824/living_room_uxhsfe.jpg')">
           
         </div>
       </div>
@@ -119,11 +123,11 @@
       <div>
         <div class="py-4"></div>
         <div class="text-center font-bold text-3xl md:text-4xl">
-          Featured <span class="bg-gradient-to-r from-blue-500 to-blue-700 bg-clip-text text-transparent">Products</span>
+          New <span class="bg-gradient-to-r from-blue-500 to-blue-700 bg-clip-text text-transparent">Products</span>
         </div>
         <div class="py-2 md:py-4"></div>
         <div class="text-center text-md">
-          Discover our most popular furniture pieces, designed with quality and style in mind.
+          Discover our new popular furniture pieces, designed with quality and style in mind.
         </div>
         <div class="py-4 md:py-8">
           <ProductGrid />
