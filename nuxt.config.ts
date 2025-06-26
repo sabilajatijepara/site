@@ -16,10 +16,10 @@ export default defineNuxtConfig({
 
   googleFonts: {
     display: 'swap',
-    base64: true,
     families: {
       "Plus+Jakarta+Sans": true,
       Poppins: true,
+      Montserrat: true,
     },
   },
   
