@@ -14,7 +14,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        
+        jakarta: ['"Plus Jakarta Sans"', 'sans-serif'],
+        poppins: ['"Poppins"', 'sans-serif'],
+        montserrat: ['"Montserrat"', 'sans-serif'],
       },
     },
   },

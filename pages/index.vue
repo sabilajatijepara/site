@@ -1,4 +1,4 @@
-<template>
+<template class="font-jakarta">
   <NavBar />
   <div class="py-12"></div>
   <div class="px-4">
@@ -7,7 +7,7 @@
   <div class="py-4 md:py-8">
     <div class="py-2 md:py-4"></div>
     <section class="px-6 container mx-auto">
-      <div class="text-3xl md:text-5xl font-bold">
+      <div class="text-3xl md:text-5xl font-bold font-jakarta">
         Crafting Exceptional <span class="text-blue-600">Furniture Experience</span>
       </div>
       <div class="py-4"></div>

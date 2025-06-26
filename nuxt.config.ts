@@ -33,7 +33,6 @@ export default defineNuxtConfig({
     strategy: 'prefix_except_default', // URL tanpa prefix untuk default locale
     detectBrowserLanguage: {    // Opsi deteksi bahasa browser
       useCookie: true,
-      cookieKey: 'i18n_redirected',
       redirectOn: 'root', // Mengarahkan ulang ke root berdasarkan bahasa
     },
   },
