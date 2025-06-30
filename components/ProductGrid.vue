@@ -33,12 +33,18 @@
         <div class="flex justify-between">
           <div>Rp 12.000</div>
           <div>
-            <NuxtLink :to="item.link" class="text-sm px-3 py-2 rounded-full bg-white text-black">
+            <NuxtLink :to="item.link" class="text-sm px-3 py-2 rounded-full bg-white text-black hover:bg-gray-200 transition delay-150">
               View Product
             </NuxtLink>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+  <div class="py-4"></div>
+  <div class="flex justify-center">
+    <div>
+      <NuxtLink class="rounded-full border border-black px-4 py-3 hover:bg-blue-200 hover:border-blue-200 transition delay-150">View All Products</NuxtLink>
     </div>
   </div>
 </template>

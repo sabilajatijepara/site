@@ -1,9 +1,6 @@
 <template class="font-jakarta">
   <NavBar />
-  <div class="py-12"></div>
-  <div class="px-4">
-    <SliderHome/>
-  </div>
+  <HeroHome />
   <div class="py-4 md:py-8">
     <div class="py-2 md:py-4"></div>
     <section class="px-6 container mx-auto">
@@ -20,6 +17,10 @@
         <NuxtLinkLocale class="bg-gradient-to-r from-blue-500 to-blue-800 px-3 py-2 rounded-full text-white hover:from-blue-800 hover:to-blue-500 transition hover:shadow-lg hover:shadow-blue-400">
           See Product Catalog
         </NuxtLinkLocale>
+      </div>
+      <div class="py-3"></div>
+      <div class="py-4">
+        <SliderHome/>
       </div>
       <div class="py-4"></div>
       <div class="grid grid-cols-2 gap-3 md:gap-4">

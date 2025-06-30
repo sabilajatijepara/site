@@ -1,9 +1,9 @@
 <template>
   <header class="">
     <div class="fixed top-0 left-0 w-full z-50 bg-gray-100/20 backdrop-blur-lg border-b-4 border-gray-100/20 rounded-b-2xl border-x-4">
-    <div class="container mx-auto flex items-center justify-between px-4 py-6">
+    <div class="container mx-auto flex items-center justify-between px-4 py-6 inline-flex">
       <!-- Logo -->
-      <h1 class="text-xl font-bold mix-blend-difference">
+      <h1 class="text-xl font-bold">
         <NuxtLinkLocale to="/">Sabilajati Jepara</NuxtLinkLocale>
       </h1>
 
@@ -15,11 +15,12 @@
         <NuxtLinkLocale to="/contact" class="hover:text-gray-300">{{ $t('Contact') }}</NuxtLinkLocale>
       </nav>
 
+      <div class="md:hidden focus:outline-none">
       <button
-        class="block md:hidden focus:outline-none"
+        class="flex items-center inline-flex space-x-1 border rounded-full px-3 py-2 hover:bg-gray-100 transition delay-150"
         @click="toggleMenu"
-      >
-        <svg
+      > <span class="text-xs">Menu</span>
+        <!--<svg
           class="w-6 h-6 transition-transform duration-300"
           :class="{ 'rotate-90': isMenuOpen }"
           fill="none"
@@ -35,8 +36,10 @@
           >
             <title>Menu</title>
           </path>
-        </svg>
+        </svg>-->
+        <Icon name="ci:menu-duo-lg"/>
       </button>
+      </div>
     </div>
     </div>
 
@@ -50,11 +53,11 @@
           <div class="font-bold text-xl text-black">Sabilajati Jepara</div>
           <div class="space-x-2">
             <button
-              class="text-gray-300 focus:outline-none
-              text-2xl"
+              class="text-black focus:outline-none flex items-center inline-flex space-x-1 border rounded-full px-3 py-2 hover:bg-gray-100 transition delay-150"
               @click="toggleMenu"
             >
-              <svg
+            <span class="text-xs text-black">Close</span>
+              <!--<svg
                 class="w-6 h-6"
                 fill="none"
                 stroke="#000"
@@ -69,7 +72,8 @@
                 >
                   <title>Close</title>
                 </path>
-              </svg>
+              </svg>-->
+              <Icon name="line-md:close-small"/>
             </button>
           </div>
         </div>
