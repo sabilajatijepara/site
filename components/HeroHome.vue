@@ -1,6 +1,6 @@
 <template>
   <section class="relative flex h-screen overflow-hidden justify-center">
-    <video autoplay muted loop class="absolute z-10 w-auto min-w-full min-h-full max-w-none">
+    <video autoplay muted loop playsinline class="absolute z-10 w-auto min-w-full min-h-full max-w-none">
       <source src="https://ik.imagekit.io/sabilajati/okyjhxhu0adokkffrhyp.mov/ik-video.mp4?updatedAt=1751286353633"></source>
     </video>
     <div class="absolute md:container z-40 bottom-0 left-0 md:left-28">

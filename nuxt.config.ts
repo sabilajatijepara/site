@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     'nuxt-swiper',
     '@nuxt/icon',
     '@nuxtjs/i18n',
+    'nuxt-aos',
   ],
   
   tailwindcss: {
@@ -33,7 +34,7 @@ export default defineNuxtConfig({
     strategy: 'prefix_except_default', // URL tanpa prefix untuk default locale
     detectBrowserLanguage: {    // Opsi deteksi bahasa browser
       useCookie: true,
-      redirectOn: 'root', // Mengarahkan ulang ke root berdasarkan bahasa
+      // redirectOn: 'root', Mengarahkan ulang ke root berdasarkan bahasa
     },
   },
 })

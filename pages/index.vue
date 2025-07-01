@@ -150,6 +150,22 @@
         </div>
       </div>
     </section>
+    <section class="container mx-auto px-4 py-6">
+      <div class="text-center rounded-3xl overflow-hidden text-white">
+        <div class="bg-amber-600 px-5 py-4 text-2xl font-bold">
+          Subscribe to our letternews and grab 30% OFF!
+        </div>
+        <div class="bg-blue-800 px-4 py-6">
+          <div>
+            <input type="email" class=" rounded-2xl px-4 py-2 bg-blue-700 focus:outline-white placeholder-white/40" placeholder="Your email address..."/>
+          </div>
+          <div class="py-2"></div>
+          <div>
+            <NuxtLink to="/" class="bg-amber-600 px-3 py-2 rounded-lg">Submit</NuxtLink>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
