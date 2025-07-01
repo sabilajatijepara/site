@@ -1,10 +1,10 @@
 <template>
-  <section class="relative flex h-screen overflow-hidden justify-center">
-    <video autoplay muted loop playsinline class="absolute z-10 w-auto min-w-full min-h-full max-w-none">
+  <section class="relative h-screen overflow-hidden">
+    <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover z-[-1]">
       <source src="https://ik.imagekit.io/sabilajati/okyjhxhu0adokkffrhyp.mov/ik-video.mp4?updatedAt=1751286353633"></source>
     </video>
-    <div class="absolute md:container z-40 bottom-0 left-0 md:left-28">
-      <div class="px-4 py-8">
+    <div class="relative z-10 flex items-end h-full">
+      <div class="px-4 py-8 container mx-auto pb-10 md:pb-16">
         <div>
           <p class="text-4xl mix-blend-overlay text-white font-bold">We are Sabilajati.<br/>Furniture Makers</p>
         </div>

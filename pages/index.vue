@@ -1,5 +1,7 @@
 <template class="font-jakarta">
-  <NavBar />
+  <div class="flex container mx-auto">
+    <NavBar />
+  </div>
   <HeroHome />
   <div class="py-4 md:py-8">
     <div class="py-2 md:py-4"></div>
@@ -157,11 +159,23 @@
         </div>
         <div class="bg-blue-800 px-4 py-6">
           <div>
-            <input type="email" class=" rounded-2xl px-4 py-2 bg-blue-700 focus:outline-white placeholder-white/40" placeholder="Your email address..."/>
+            <input
+              type="email"
+              v-model="email"
+              class="rounded-2xl px-4 py-2 bg-blue-700 focus:outline-white placeholder-white/40"
+              placeholder="Your email address..."
+            />
+            <p v-if="error" class="text-red-600 text-sm mt-2 font-bold">{{ error }}</p>
           </div>
           <div class="py-2"></div>
           <div>
-            <NuxtLink to="/" class="bg-amber-600 px-3 py-2 rounded-lg">Submit</NuxtLink>
+            <button
+              @click="submitEmail"
+              :disabled="!email"
+              class="bg-amber-600 px-3 py-2 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              Submit
+            </button>
           </div>
         </div>
       </div>
@@ -169,6 +183,25 @@
   </div>
 </template>
 
-<script>
-  
+<script setup>
+import { ref } from 'vue'
+
+const email = ref('')
+const error = ref('')
+
+const isValidEmail = (value) => {
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  return regex.test(value)
+}
+
+const submitEmail = () => {
+  if (!isValidEmail(email.value)) {
+    error.value = 'Email tidak valid'
+    return
+  }
+
+  error.value = ''
+  // Kirim email ke backend di sini, misal dengan fetch atau axios
+  alert(`Email "${email.value}" berhasil dikirim!`)
+}
 </script>

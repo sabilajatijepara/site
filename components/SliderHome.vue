@@ -1,6 +1,6 @@
 <template class="">
   <ClientOnly>
-    <div class="absolute w-full left-1/2 top-32 transform -translate-x-1/2 -translate-y-1/2 size-96 bg-gradient-to-b from-blue-200 to-transparent">
+    <div class="absolute w-full left-1/2 top-32 transform -translate-x-1/2 -translate-y-1/2 size-96 bg-gradient-to-b from-blue-400 to-transparent">
       
     </div>
     <swiper-container

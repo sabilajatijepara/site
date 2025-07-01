@@ -4,13 +4,12 @@
       slides-per-view="1"
       loop="true"
       pagination="true"
-      navigation="true"
       autoplay-delay="5000"
       effect="fade"
       class="w-full"
     >
       <swiper-slide v-for="(customer, index) in customers" :key="index">
-        <div class="bg-white py-6 px-4">
+        <div class="bg-white py-8 px-4">
           <div class="py-4 px-6 border rounded-2xl">
             <div class="flex items-center mb-4">
                   <div class="flex text-yellow-400">
@@ -51,18 +50,28 @@
 <script setup lang="ts">
 const customers = [
   {
-    name: 'Sinta Rahayu',
-    comment: 'Pelayanan sangat ramah dan cepat. Saya sangat puas dengan hasil akhirnya!',
+    name: 'Tokopedia User',
+    comment: 'Bagus barang nya sudah sesuai pesanan',
     rating: 5,
   },
   {
-    name: 'Bagas Prasetyo',
-    comment: 'Produk sesuai ekspektasi. Proses pengiriman juga aman dan cepat.',
-    rating: 4,
+    name: 'Maimun',
+    comment: 'Pembelian kedua, aman komunikatif, responsif, walau kurang tatakan aman jaya, berkah sukses selalu.',
+    rating: 5,
   },
   {
-    name: 'Lina Marlina',
-    comment: 'Desain elegan dan kualitasnya bagus. Recommended!',
+    name: 'Demi',
+    comment: 'Puas walaupun indent tetep datangnya cepet🥹🫶 sebagus itu dan informatif sekali adminnya dan gercep',
+    rating: 5,
+  },
+  {
+    name: 'Indira',
+    comment: 'Kualitas bagus, finishing bagus, komunikasi dengan seller baik dan pengiriman cepat👍',
+    rating: 5,
+  },
+  {
+    name: 'Tokopedia User',
+    comment: 'Harga oke warna sesuai ukuran sesuai barang sampai dengan aman',
     rating: 5,
   },
 ]
