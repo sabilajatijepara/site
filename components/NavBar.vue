@@ -1,5 +1,5 @@
 <template>
-  <header class="">
+  <header class="max-w-4xl mx-auto">
     <div class="fixed top-0 left-0 w-full z-50 bg-gray-100/20 backdrop-blur-lg border-b-4 border-gray-100/20 rounded-b-2xl border-x-4">
     <div class="container mx-auto flex items-center justify-between px-4 py-6 inline-flex">
       <!-- Logo -->

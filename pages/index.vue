@@ -1,11 +1,13 @@
 <template class="font-jakarta">
-  <div class="flex container mx-auto">
+  <div class="flex container mx-auto max-w-4xl">
     <NavBar />
   </div>
-  <HeroHome />
-  <div class="py-4 md:py-8">
+  <div class="">
+    <HeroHome />
+  </div>
+  <div class="py-4 md:py-8 max-w-4xl mx-auto">
     <div class="py-2 md:py-4"></div>
-    <section class="px-6 container mx-auto">
+    <section class="px-6 container mx-auto max-w-4xl">
       <div class="text-3xl md:text-5xl font-bold font-jakarta">
         Crafting Exceptional <span class="text-blue-600">Furniture Experience</span>
       </div>
@@ -153,16 +155,16 @@
       </div>
     </section>
     <section class="container mx-auto px-4 py-6">
-      <div class="text-center rounded-3xl overflow-hidden text-white">
-        <div class="bg-amber-600 px-5 py-4 text-2xl font-bold">
+      <div class="text-center rounded-3xl overflow-hidden border-2 ">
+        <div class="px-5 py-4 text-2xl font-bold">
           Subscribe to our letternews and grab 30% OFF!
         </div>
-        <div class="bg-blue-800 px-4 py-6">
+        <div class="px-4 py-6">
           <div>
             <input
               type="email"
               v-model="email"
-              class="rounded-2xl px-4 py-2 bg-blue-700 focus:outline-white placeholder-white/40"
+              class="rounded-2xl px-4 py-2 bg-gray-200 focus:outline-white placeholder-black/40"
               placeholder="Your email address..."
             />
             <p v-if="error" class="text-red-600 text-sm mt-2 font-bold">{{ error }}</p>

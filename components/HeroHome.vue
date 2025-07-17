@@ -4,7 +4,7 @@
       <source src="https://ik.imagekit.io/sabilajati/okyjhxhu0adokkffrhyp.mov/ik-video.mp4?updatedAt=1751286353633"></source>
     </video>
     <div class="relative z-10 flex items-end h-full">
-      <div class="px-4 py-8 container mx-auto pb-10 md:pb-16">
+      <div class="px-4 py-8 container mx-auto max-w-4xl pb-10 md:pb-16">
         <div>
           <p class="text-4xl mix-blend-overlay text-white font-bold">We are Sabilajati.<br/>Furniture Makers</p>
         </div>
