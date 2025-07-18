@@ -1,10 +1,10 @@
 <template>
   <header class="max-w-4xl mx-auto">
-    <div class="fixed top-0 left-0 w-full z-50 bg-gray-100/20 backdrop-blur-lg border-b-4 border-gray-100/20 rounded-b-2xl border-x-4">
+    <div class="fixed top-0 left-0 w-full z-50 bg-gray-100/20 backdrop-blur-lg ">
     <div class="container mx-auto flex items-center justify-between px-4 py-6 inline-flex">
       <!-- Logo -->
       <h1 class="text-xl font-bold">
-        <NuxtLinkLocale to="/">Sabilajati Jepara</NuxtLinkLocale>
+        <NuxtLinkLocale to="/" class="[text-shadow:_0_2px_4px_#fff]">Sabilajati Jepara</NuxtLinkLocale>
       </h1>
 
       <!-- Desktop Menu -->

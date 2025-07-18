@@ -1,6 +1,6 @@
 <template class="">
   <ClientOnly>
-    <div class="absolute w-full left-1/2 top-32 transform -translate-x-1/2 -translate-y-1/2 size-96 bg-gradient-to-b from-blue-400 to-transparent">
+    <div class="absolute w-full left-1/2 top-32 transform -translate-x-1/2 -translate-y-1/2 size-96 lg:size-fit bg-gradient-to-b from-blue-400 to-transparent">
       
     </div>
     <swiper-container
@@ -9,7 +9,7 @@
       autoplay-delay="5000"
       pagination="true"
       effect="fade"
-      class="w-full h-96 md:h-[25vh]"
+      class="w-full h-96 md:h-[25vh] lg:h-[60vh]"
     >
       <swiper-slide v-for="(slide, index) in slides" :key="index" class="">
         <div
