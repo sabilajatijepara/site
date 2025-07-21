@@ -1,4 +1,6 @@
 <template>
+  <div v-if="pending">Sedang memuat produk...</div>
+  <div v-else-if="error">Gagal memuat data produk.</div>
   <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
     <div
       v-for="(item, index) in products"
@@ -28,10 +30,10 @@
       >
         <h3 class="text-xl md:text-2xl font-semibold">{{ item.name }}</h3>
         <div class="py-1"></div>
-        <p class="text-sm">{{ item.description }}</p>
+        <p class="text-sm">{{ item.description.length > 60 ? item.description.slice(0, 60) + '...' : item.description }}</p>
         <div class="py-2"></div>
         <div class="flex justify-between">
-          <div>Rp 12.000</div>
+          <div>Rp {{ item.price.toLocaleString('id-ID') }}</div>
           <div>
             <NuxtLink :to="item.link" class="text-sm px-3 py-2 rounded-full bg-white text-black hover:bg-gray-200 transition delay-150">
               View Product
@@ -58,27 +60,17 @@
     </div>
   </div>
 </template>
-
 <script setup>
-const products = [
-  {
-    name: 'Table and Chair',
-    category: 'School',
-    description: 'Ergonomic and functional furniture for educational environments.',
-    image: 'https://res.cloudinary.com/dwn4gzaqp/image/upload/v1747188213/file-CBRwQrKonVtvYBFXQPAeWA_lylmqn.webp',
-    link: '/category/school'
-  },
-  {
-    name: 'Teak Gazebo',
-    category: 'Gazebo',
-    description: 'Elegant outdoor structures perfect for gardens and patios.',
-    image: 'https://res.cloudinary.com/dwn4gzaqp/image/upload/v1747188211/file-66wMTjmnDaGjwtAf1Svhj7_wtctoi.webp',
-  },
-    {
-    name: 'Ropan Chair',
-    category: 'Home Living',
-    description: 'Elegant outdoor structures perfect for gardens and patios.',
-    image: 'https://res.cloudinary.com/dwn4gzaqp/image/upload/v1747188211/file-66wMTjmnDaGjwtAf1Svhj7_wtctoi.webp',
-  },
-]
+const { data: response, pending, error } = await useFetch('https://api.sabilajati.com/products')
+
+// Transformasi data agar sesuai dengan struktur yang template kamu harapkan
+const products = computed(() =>
+  (response.value || []).slice(0,3).map((item) => ({
+    name: item.name,
+    description: item.description,
+    image: item.imageURL[0] || '', // pakai gambar pertama
+    link: `/products/${item.slug}`, // buat link dinamis berdasarkan slug
+    price: item.price
+  }))
+)
 </script>
