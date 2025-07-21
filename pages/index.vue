@@ -198,7 +198,7 @@
           class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-2 md:gap-4 lg:gap-6 justify-items-center content-center"
           data-aos="fade-up"
         >
-          <div class="flex items-center justify-center">
+          <div class="">
             <img
               src="https://res.cloudinary.com/dwn4gzaqp/image/upload/v1752987426/Newsletters_1_zmhue8.png"
               alt=""
@@ -235,6 +235,10 @@
         </div>
       </div>
     </section>
+  </div>
+  <FAB /> 
+  <div class="">
+    <Footer />
   </div>
 </template>
 

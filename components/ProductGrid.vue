@@ -44,7 +44,17 @@
   <div class="py-4"></div>
   <div class="flex justify-center">
     <div>
-      <NuxtLink class="rounded-full border border-black px-4 py-3 hover:bg-blue-200 hover:border-blue-200 transition delay-150">View All Products</NuxtLink>
+      <NuxtLink
+        to="/products"
+        class="relative overflow-hidden px-6 py-3 rounded-3xl border border-blue-600 text-blue-600 font-medium transition-all duration-300 group inline-block"
+      >
+        <span class="relative z-10 group-hover:text-white">View All Products</span>
+    
+        <!-- Efek air mengisi -->
+        <span
+          class="absolute left-0 bottom-0 w-full h-full z-0 bg-blue-600 transition-all duration-500 ease-in-out transform translate-y-full group-hover:translate-y-0 rounded-t-[100%] group-hover:rounded-t-none"
+        ></span>
+      </NuxtLink>
     </div>
   </div>
 </template>
