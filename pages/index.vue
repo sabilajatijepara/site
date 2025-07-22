@@ -136,7 +136,7 @@
       </div>
     </section>
     <div class="py-6"></div>
-    <section class="bg-gray-100 rounded-xl">
+    <section class="bg-gray-200/50 rounded-xl lg:rounded-[2rem]">
       <div class="container mx-auto py-6 px-4">
         <div class="py-4"></div>
         <div class="text-center font-bold text-3xl md:text-4xl" data-aos="fade-up">
@@ -151,7 +151,7 @@
           Explore our diverse range of furniture collections designed for different spaces and
           needs.
         </div>
-        <div class="py-4 md:py-8" data-aos="fade-up">
+        <div class="py-4 px-4 md:py-8" data-aos="fade-up">
           <CollectionsGrid />
         </div>
       </div>
