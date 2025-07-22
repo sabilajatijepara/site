@@ -35,6 +35,7 @@ export default defineNuxtConfig({
     detectBrowserLanguage: {    // Opsi deteksi bahasa browser
       useCookie: true,
       // redirectOn: 'root', Mengarahkan ulang ke root berdasarkan bahasa
+      redirecton: false,
     },
   },
 })

@@ -1,7 +1,7 @@
 <template>
-  <header class="max-w-4xl mx-auto">
+  <header class="max-w-4xl">
     <div class="fixed top-0 left-0 w-full z-50 bg-gray-100/20 backdrop-blur-lg ">
-    <div class="container mx-auto flex items-center justify-between px-4 py-6 inline-flex">
+    <div class="container mx-auto flex items-center justify-between px-4 py-6 inline-flex max-w-4xl">
       <!-- Logo -->
       <h1 class="text-xl font-bold">
         <NuxtLinkLocale to="/" class="[text-shadow:_0_2px_4px_#fff]">Sabilajati Jepara</NuxtLinkLocale>
@@ -102,9 +102,9 @@
           <div class="pt-8">
             <p class="mb-2 font-bold">Language</p>
             <div class="text-sm space-x-4">
-              <NuxtLink to="/en">ENGLISH</NuxtLink>
+              <NuxtLink to="/">ENGLISH</NuxtLink>
               <span>|</span>
-              <NuxLink to="/id">INDONESIA</NuxLink>
+              <NuxtLink to="/id">INDONESIA</NuxtLink>
             </div>
           </div>
         </div>

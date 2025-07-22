@@ -129,8 +129,7 @@
           <div
             class="md:col-span-2 bg-blue-300/50 rounded-2xl py-6 px-4 bg-cover h-auto"
             style="
-              background-image: url('https://res.cloudinary.com/dwn4gzaqp/image/upload/v1750855824/living_room_uxhsfe.jpg');
-            "
+              background-image: url('https://res.cloudinary.com/dwn4gzaqp/image/upload/v1750855824/living_room_uxhsfe.jpg');"
             data-aos="fade-up"
           ></div>
         </div>

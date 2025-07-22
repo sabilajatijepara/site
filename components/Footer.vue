@@ -1,5 +1,5 @@
 <template>
-  <footer class="container mx-auto px-4 py-8 border-t">
+  <footer class="container mx-auto px-4 py-8 border-t max-w-4xl">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 justify-between">
       <div>
         <div class="font-bold text-2xl">Sabilajati Jepara</div>
@@ -12,12 +12,10 @@
       <div>
         <div class="font-bold">Contact</div>
         <div class="space-y-2">
-        <div class="pt-3"><Icon name="ri:map-pin-2-line"/> Jepara
-            <div>
+        <div class="pt-3"><Icon name="ri:map-pin-2-line"/>
             <nuxt-link to="https://maps.app.goo.gl/aUv74NiqGtibWH8b7">
             <span class="hover:underline text-sm">Jl. Jepara - Bangsri, Dusun 3, Suwawal, Kec. Mlonggo, Kabupaten Jepara, Jawa Tengah 59452 (Samping Alfamart)</span>
             </nuxt-link>
-            </div>
           </div>
           <div class="flex items-center">
             <nuxt-link to="https://wa.me/+6285225208256">

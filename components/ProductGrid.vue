@@ -1,12 +1,12 @@
 <template>
-  <div v-if="pending">Sedang memuat produk...</div>
-  <div v-else-if="error">Gagal memuat data produk.</div>
+  <div v-if="pending" class="text-center">Sedang memuat produk...</div>
+  <div v-else-if="error" class="text-center text-red-500">Gagal memuat data produk.</div>
   <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
     <div
       v-for="(item, index) in products"
       :key="index"
       :class="[
-        'relative h-72 w-full rounded-3xl overflow-hidden group cursor-pointer',
+        'relative h-72 md:h-80 lg:h-96 w-full rounded-3xl overflow-hidden group cursor-pointer',
         (index === products.length - 1 && products.length % 2 !== 0)
           ? 'md:col-span-2'
           : ''
@@ -26,15 +26,15 @@
 
       <!-- Text and link on hover -->
       <div
-        class="absolute bottom-4 left-4 text-white duration-300 p-2 md:px-4 md:py-4"
+        class="absolute bottom-4 left-4 text-white duration-300 p-2 md:px-4 md:py-4 w-full"
       >
         <h3 class="text-xl md:text-2xl font-semibold">{{ item.name }}</h3>
         <div class="py-1"></div>
-        <p class="text-sm">{{ item.description.length > 60 ? item.description.slice(0, 60) + '...' : item.description }}</p>
+        <p class="text-sm truncate">{{ item.description }}</p>
         <div class="py-2"></div>
-        <div class="flex justify-between">
+        <div class="flex w-full justify-between">
           <div>Rp {{ item.price.toLocaleString('id-ID') }}</div>
-          <div>
+          <div class="px-4">
             <NuxtLink :to="item.link" class="text-sm px-3 py-2 rounded-full bg-white text-black hover:bg-gray-200 transition delay-150">
               View Product
             </NuxtLink>
@@ -65,7 +65,7 @@ const { data: response, pending, error } = await useFetch('https://api.sabilajat
 
 // Transformasi data agar sesuai dengan struktur yang template kamu harapkan
 const products = computed(() =>
-  (response.value || []).slice(0,3).map((item) => ({
+  (response.value || []).slice(0,4).map((item) => ({
     name: item.name,
     description: item.description,
     image: item.imageURL[0] || '', // pakai gambar pertama
