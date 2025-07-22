@@ -176,6 +176,9 @@
       </div>
     </section>
     <section class="container mx-auto px-4 py-6">
+      <OurClient />
+    </section>
+    <section class="container mx-auto px-4 py-6">
       <div>
         <div class="py-4"></div>
         <div class="text-center font-bold text-3xl md:text-4xl" data-aos="fade-up">
@@ -262,4 +265,54 @@ const submitEmail = () => {
   // Kirim email ke backend di sini, misal dengan fetch atau axios
   alert(`Email "${email.value}" berhasil dikirim!`);
 };
+
+// SEO
+useHead({
+        title: "Sabilajati Mebel Jepara", // Title halaman
+        meta: [
+          { name: "description", content: "We are a manufacturer of school desks and chairs, cafe tables and chairs, as well as gazebos" },
+          { name: "keywords", content: "Mebel jepara, meubel jepara, kursi meja cafe, meja kursi sekolah, jasa pembuatan gazebo, jasa pembuatan bungalow, furniture custom" }, // Meta keywords
+          { property: "og:title", content: "Sabilajati Mebel Jepara" }, // Open Graph Title
+          { property: "og:description", content: "We are a manufacturer of school desks and chairs, cafe tables and chairs, as well as gazebos" }, // Open
+          { property: "og:image", content: "https://res.cloudinary.com/doninmxbl/image/upload/kquaxae4iakjge8rlve6.png" }, 
+        ],
+        link: [
+          {
+          rel: 'canonical',
+          href: 'https://sabilajati.co.id'
+          },
+        ],
+    script: [
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Sabilajati Mebel Jepara",
+        "url": "https://sabilajati.co.id",
+        "logo": "https://res.cloudinary.com/doninmxbl/image/upload/kquaxae4iakjge8rlve6.png",
+        "description": "Kami adalah produsen meja kursi sekolah, meja kursi cafe, serta gazebo dan bungalow.",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Jl. Raya Jepara - Bangsri KM 6",
+          "addressLocality": "Jepara",
+          "addressRegion": "Jawa Tengah",
+          "postalCode": "59452",
+          "addressCountry": "ID"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+62 852-2520-8256",
+          "contactType": "customer service"
+        },
+        "sameAs": [
+          "https://www.facebook.com/sabilajatimebeljepara",
+          "https://www.instagram.com/sabilajati_jepara",
+          "https://wa.me/6285225208256"
+        ]
+      })
+    }
+  ]
+});
+
 </script>

@@ -4,7 +4,7 @@
     <transition name="fade">
       <div
         v-if="showContact"
-        class="mb-2 p-4 bg-white rounded-xl shadow-xl flex flex-col items-start space-y-3 w-48 border border-white/20 bg-white/30 backdrop-blur-md backdrop-saturate-150"
+        class="mb-2 p-4 bg-white rounded-xl shadow-xl flex flex-col items-start space-y-3 w-48 lg:w-96 border border-white/20 bg-white/30 backdrop-blur-md backdrop-saturate-150"
       >
         <div class="font-bold text-lg">
           Contact Us
@@ -35,10 +35,10 @@
     <!-- FAB Button -->
     <button
       @click="toggleContact"
-      class="w-14 h-14 text-blue-600 rounded-full shadow-md flex items-center justify-center transition duration-300 border border-white/20 bg-white/30 backdrop-blur-md backdrop-saturate-150"
+      class="w-14 h-14 md:h-20 md:w-20 text-blue-600 text-2xl md:text-4xl rounded-full shadow-md flex items-center justify-center transition duration-300 border border-white/20 bg-white/30 backdrop-blur-md backdrop-saturate-150"
       aria-label="Hubungi Kami"
     >
-      <Icon name="heroicons:chat-bubble-left-right" size="24" />
+      <Icon name="heroicons:chat-bubble-left-right"/>
     </button>
   </div>
 </template>
