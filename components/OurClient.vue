@@ -12,10 +12,11 @@
             :loop="true"
             :direction="'horizontal'"
             :free-mode="true"
+            :free-mode-momentum="false"
             :autoplay="{ delay: 0, disableOnInteraction: false }"
-            :speed="4000"
+            :speed="6000"
             :breakpoints="{
-            320: { slidesPerView: 1 },
+            320: { slidesPerView: 2 },
             640: { slidesPerView: 3 },
             768: { slidesPerView: 4 },
             1024: { slidesPerView: 5 },

@@ -194,6 +194,21 @@
         </div>
       </div>
     </section>
+    <section class="container mx-auto px-4 py-6 max-w-4xl">
+       <div>
+        <div class="py-4"></div>
+        <div class="text-center font-bold text-3xl md:text-4xl" data-aos="fade-up">
+          Latest Insights
+        </div>
+        <div class="py-2 md:py-4"></div>
+        <div class="text-center text-md" data-aos="fade-up">
+          Discover ideas, trends, and tips to elevate your living and working spaces.
+        </div>
+        <div class="py-4 md:py-8" data-aos="fade-up">
+          <BlogHome />
+        </div>
+      </div>
+    </section>
     <section class="container mx-auto px-4 py-6">
       <div class="rounded-3xl overflow-hidden border-2">
         <div
