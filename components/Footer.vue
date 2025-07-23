@@ -5,7 +5,7 @@
         <div class="font-bold text-2xl">Sabilajati Jepara</div>
         <div class="space-y-2 pt-2">
           <div class="text-gray-600">
-            Kami adalah produsen meja kursi sekolah, meja kursi cafe, serta gazebo dan bungalow.
+            We are manufacturers of school tables and chairs, cafe tables and chairs, as well as gazebos and bungalows.
           </div>
         </div>
       </div>
@@ -37,10 +37,10 @@
         <div class="space-x-4">
           <nuxt-link
           to="https://instagram.com/sabilajati_jepara" class="bg-amber-400 w-32 h-32 rounded-full items-center"><Icon
-          name="ri:instagram-line" size="24"><title>Instagram</title></Icon></nuxt-link>
+          name="ri:instagram-line" size="24" aria-label="Instagram"><title>Instagram</title></Icon></nuxt-link>
           <nuxt-link
           to="https://tiktok.com/@sabilajatijepara" class="bg-amber-400 w-32 h-32 rounded-full items-center"><Icon
-          name="ri:tiktok-line" size="24"><title>Tiktok</title></Icon></nuxt-link>
+          name="ri:tiktok-line" size="24" aria-label="Tiktok"><title>Tiktok</title></Icon></nuxt-link>
         </div>
       </div>
     </div>

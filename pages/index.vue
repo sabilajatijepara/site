@@ -95,9 +95,9 @@
       <div class="container mx-auto px-6">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div
-            class="md:col-span-2 bg-blue-300/50 rounded-2xl bg-cover"
+            class="md:col-span-2 bg-blue-300/50 rounded-2xl py-12 px-4  bg-cover h-full"
             style="
-              background-image: url('https://res.cloudinary.com/dwn4gzaqp/image/upload/v1750855824/living_room_uxhsfe.jpg');
+              background-image: url('https://res.cloudinary.com/dwn4gzaqp/image/upload/c_fill,ar_16:9,g_auto/v1753250372/download_1_tr4cxr.webp');
             "
             data-aos="fade-up"
           >
@@ -127,9 +127,9 @@
             </div>
           </div>
           <div
-            class="md:col-span-2 bg-blue-300/50 rounded-2xl py-6 px-4 bg-cover h-auto"
+            class="md:col-span-2 bg-blue-300/50 rounded-2xl py-12 px-4  bg-cover h-auto"
             style="
-              background-image: url('https://res.cloudinary.com/dwn4gzaqp/image/upload/v1750855824/living_room_uxhsfe.jpg');"
+              background-image: url('https://res.cloudinary.com/dwn4gzaqp/image/upload/c_fill,ar_16:9,g_auto/v1750855824/living_room_uxhsfe.webp');"
             data-aos="fade-up"
           ></div>
         </div>

@@ -7,11 +7,11 @@ const { data: blogPosts, error, pending: isLoading } = await useFetch('https://a
     <div v-if="isLoading" class="text-gray-500 text-center">Memuat...</div>
     <div v-else-if="error" class="text-red-500 text-center">Gagal memuat blog.</div>
 
-    <div v-else class="grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6">
+    <div v-else class="grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3 gap-6">
       <div
         v-for="post in blogPosts?.slice(0, 3)"
         :key="post.id"
-        class="bg-white rounded-xl shadow hover:shadow-md transition overflow-hidden"
+        class="bg-white rounded-xl shadow hover:shadow-xl transition overflow-hidden border"
       >
         <img :src="post.thumbnail" alt="Thumbnail" class="w-full h-48 object-cover" />
         <div class="p-4 flex flex-col h-full">
