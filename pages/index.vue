@@ -13,9 +13,7 @@
       </div>
       <div class="py-4"></div>
       <div class="lg:text-xl" data-aos="fade-up">
-        After many years, Sabilajati has been at the forefront of contemporary furniture
-        design, creating pieces that blend functionality with aesthetic appeal. Our mission is
-        to transform spaces into comfortable, stylish environments that inspire productivity
+        After many years, Sabilajati has been at the forefront of contemporary furniture design, creating pieces that blend functionality with aesthetic appeal. Our mission is to transform spaces into comfortable, stylish environments that inspire productivity
         and relaxation.
       </div>
       <div class="py-3"></div>
@@ -244,8 +242,9 @@
                   :disabled="!email"
                   class="bg-amber-600 px-3 py-2 rounded-2xl disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Subscribe
+                  {{ loading ? 'Mengirim...' : 'Subscribe' }}
                 </button>
+                <p v-if="message" :class="messageClass" class="text-sm mt-2">{{ message }}</p>
               </div>
             </div>
           </div>
@@ -261,25 +260,51 @@
 
 <script setup>
 import { ref } from "vue";
-
 const email = ref("");
 const error = ref("");
+const loading = ref(false);
+const message = ref("");
+const messageClass = ref("");
 
 const isValidEmail = (value) => {
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return regex.test(value);
 };
 
-const submitEmail = () => {
+const submitEmail = async () => {
+  error.value = "";
+  message.value = "";
+  messageClass.value = "";
+
   if (!isValidEmail(email.value)) {
     error.value = "Email tidak valid";
     return;
   }
 
-  error.value = "";
-  // Kirim email ke backend di sini, misal dengan fetch atau axios
-  alert(`Email "${email.value}" berhasil dikirim!`);
+  loading.value = true;
+
+  try {
+    const { data, error: apiError } = await useFetch("https://api.sabilajati.com/newsletter", {
+      method: "POST",
+      body: { email: email.value },
+    });
+
+    if (apiError.value) {
+      message.value = "Terjadi kesalahan. Coba lagi nanti.";
+      messageClass.value = "text-red-600 font-bold";
+    } else {
+      message.value = "Berhasil berlangganan !";
+      messageClass.value = "text-green-600 font-bold";
+      email.value = "";
+    }
+  } catch (err) {
+    message.value = "Terjadi kesalahan tak terduga.";
+    messageClass.value = "text-red-600 font-bold";
+  } finally {
+    loading.value = false;
+  }
 };
+
 
 // SEO
 useHead({
