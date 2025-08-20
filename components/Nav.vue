@@ -4,8 +4,8 @@
     :class="isDark ? 'text-white' : 'text-black'"
   >
     <div
-      class="fixed top-0 left-0 w-full z-50 backdrop-blur-lg transition-colors duration-300"
-      :class="isDark ? 'bg-white/10' : ''"
+      class="fixed top-0 left-0 w-full z-50 transition-colors duration-300"
+      :class="isDark ? 'bg-transparent' : 'bg-gray-100/20 backdrop-blur-lg'"
     >
       <div class="container mx-auto flex items-center justify-between px-4 py-6 inline-flex">
         <!-- Logo -->
@@ -40,7 +40,7 @@
     <transition name="fade">
       <div
         v-if="isMenuOpen"
-        class="fixed inset-0 bg-white/20 backdrop-blur-3xl flex flex-col text-xl px-4 py-6 z-50"
+        class="fixed inset-0 bg-gray-400/20 backdrop-blur-3xl flex flex-col text-xl px-4 py-6 z-50"
       >
         <div class="flex focus:outline-none text-2xl justify-between" :class="isDark ? 'text-white' : 'text-black'">
           <div class="font-bold text-xl">Sabilajati Jepara</div>
@@ -82,6 +82,146 @@
   </header>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      isMenuOpen: false,
+      isDark: false,
+    };
+  },
+  methods: {
+    toggleMenu() {
+      this.isMenuOpen = !this.isMenuOpen;
+      if (this.isMenuOpen) {
+        document.body.classList.add("overflow-hidden");
+      } else {
+        document.body.classList.remove("overflow-hidden");
+      }
+    },
+    getLuminance(color) {
+      const rgb = color.match(/\d+/g)?.map(Number);
+      if (!rgb) return 1; // fallback putih
+
+      const [r, g, b] = rgb.map((v) => {
+        v /= 255;
+        return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+      });
+
+      return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+    },
+
+    // === CEK BRIGHTNESS GAMBAR ===
+    checkImageBrightness(url) {
+      return new Promise((resolve) => {
+        const img = new Image();
+        img.crossOrigin = "anonymous";
+        img.src = url.replace(/url\(|\)|"|'/g, ""); // hapus url("...")
+        img.onload = () => {
+          const canvas = document.createElement("canvas");
+          const ctx = canvas.getContext("2d");
+
+          canvas.width = 8;
+          canvas.height = 8;
+
+          ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+          const data = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+
+          let sum = 0;
+          for (let i = 0; i < data.length; i += 4) {
+            const r = data[i] / 255;
+            const g = data[i + 1] / 255;
+            const b = data[i + 2] / 255;
+            const luminance = 0.2126 * r + 0.7152 * g + 0.0722 * b;
+            sum += luminance;
+          }
+
+          const avg = sum / (data.length / 4);
+          resolve(avg);
+        };
+        img.onerror = () => resolve(1); // fallback terang
+      });
+    },
+
+    // === CEK BRIGHTNESS VIDEO ===
+    checkVideoBrightness(videoEl) {
+      return new Promise((resolve) => {
+        try {
+          const canvas = document.createElement("canvas");
+          const ctx = canvas.getContext("2d");
+
+          canvas.width = 8;
+          canvas.height = 8;
+
+          ctx.drawImage(videoEl, 0, 0, canvas.width, canvas.height);
+          const frame = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+
+          let sum = 0;
+          for (let i = 0; i < frame.length; i += 4) {
+            const r = frame[i] / 255;
+            const g = frame[i + 1] / 255;
+            const b = frame[i + 2] / 255;
+            const luminance = 0.2126 * r + 0.7152 * g + 0.0722 * b;
+            sum += luminance;
+          }
+
+          const avgLum = sum / (frame.length / 4);
+          resolve(avgLum);
+        } catch (e) {
+          resolve(1); // fallback terang
+        }
+      });
+    },
+
+    // === OBSERVE SECTION ===
+    observeSections() {
+      const sections = document.querySelectorAll("section");
+
+      const observer = new IntersectionObserver(
+        async (entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting) {
+              const style = getComputedStyle(entry.target);
+              const videoEl = entry.target.querySelector("video");
+
+              // Cek video
+              if (videoEl) {
+                const avgLum = await this.checkVideoBrightness(videoEl);
+                this.isDark = avgLum < 0.5;
+              }
+              // Cek gambar
+              else if (style.backgroundImage && style.backgroundImage !== "none") {
+                const avgLum = await this.checkImageBrightness(style.backgroundImage);
+                this.isDark = avgLum < 0.5;
+              }
+              // Warna polos
+              else {
+                const bgColorRaw = style.backgroundColor || "rgb(255,255,255)";
+                const bgColor =
+                  bgColorRaw === "transparent" || bgColorRaw === "rgba(0, 0, 0, 0)"
+                    ? "rgb(255,255,255)"
+                    : bgColorRaw;
+
+                const luminance = this.getLuminance(bgColor);
+                this.isDark = luminance < 0.5;
+              }
+            }
+          }
+        },
+        { threshold: 0.5 }
+      );
+
+      sections.forEach((section) => observer.observe(section));
+    },
+  },
+  mounted() {
+    this.observeSections();
+  },
+  beforeDestroy() {
+    document.body.classList.remove("overflow-hidden");
+  },
+};
+</script>
 <!--<script>
 export default {
   data() {
@@ -118,22 +258,40 @@ export default {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
               const style = getComputedStyle(entry.target);
+              
+               // cek kalau ada video di dalam section
+              const hasVideo = entry.target.querySelector("video") !== null;
 
               const hasImage =
                 style.backgroundImage && style.backgroundImage !== "none";
 
-              if (hasImage) {
+              if (hasImage || hasVideo) {
                 this.isDark = true; // default anggap gelap kalau pakai gambar
               } else {
-                const bgColor = style.backgroundColor || "rgb(255,255,255)";
+                const bgColorRaw = style.backgroundColor || "rgb(255,255,255)";
+                
+                // kalau transparan → anggap putih
+                const bgColor = (bgColorRaw === "transparent" || bgColorRaw === "rgba(0, 0, 0, 0)")
+                  ? "rgb(255,255,255)"
+                  : bgColorRaw;
                 const luminance = this.getLuminance(bgColor);
 
-                this.isDark = luminance < 0.9; // gelap → teks putih
+                if (luminance >= 0.7) {
+                  this.isDark = false;
+                }
+                // kalau gelap banget → paksa putih
+                else if (luminance <= 0.3) {
+                  this.isDark = true;
+                }
+                // sisanya ikut threshold normal
+                else {
+                  this.isDark = luminance < 0.5;
+                }
               }
             }
           });
         },
-        { threshold: 0.5 }
+        { threshold: 0.6 }
       );
 
       sections.forEach((section) => observer.observe(section));
@@ -147,53 +305,6 @@ export default {
   },
 };
 </script>-->
-
-<script setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue'
-
-const isMenuOpen = ref(false)
-const isDark = ref(false)
-
-const toggleMenu = () => {
-  isMenuOpen.value = !isMenuOpen.value
-  document.body.classList.toggle("overflow-hidden", isMenuOpen.value)
-}
-
-// Luminance detection
-const navbar = ref(null)
-let observer
-
-onMounted(() => {
-  const sections = document.querySelectorAll("section, header, div")
-  observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const bgColor = window.getComputedStyle(entry.target).backgroundColor
-          const rgb = bgColor.match(/\d+/g)?.map(Number) || [255, 255, 255]
-          const [r, g, b] = rgb
-          const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255
-
-          if (luminance > 0.9) {
-            isDark.value = false // teks hitam
-          } else if (luminance < 0.65) {
-            isDark.value = true // teks putih
-          } else {
-            isDark.value = false // fallback hitam
-          }
-        }
-      })
-    },
-    { threshold: 0.5 }
-  )
-  sections.forEach((sec) => observer.observe(sec))
-})
-
-onBeforeUnmount(() => {
-  if (observer) observer.disconnect()
-  document.body.classList.remove("overflow-hidden")
-})
-</script>
 
 <style scoped>
 .fade-enter-active,

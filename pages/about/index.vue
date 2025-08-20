@@ -2,7 +2,7 @@
   <div class="flex container mx-auto max-w-4xl">
     <Nav />
   </div>
-  <div class="bg-white text-gray-800">
+  <div class="bg-white text-gray-800" data-theme="dark">
     <!-- Hero Section -->
     <section
       class="relative h-[60vh] flex items-center justify-center bg-cover bg-center"
@@ -22,7 +22,7 @@
         </p>
       </div>
     </section><!-- Our Story -->
-    <section class="py-16 px-6 md:px-20 text-center">
+    <section class="py-16 px-6 md:px-20 text-center" data-theme="light">
       <h2 class="text-2xl md:text-3xl font-bold mb-6" data-aos="fade-up">
         Our Story
       </h2>
@@ -59,7 +59,7 @@
     </section>
     
     <!-- The Soul of Jepara -->
-    <section class="py-16 px-6 md:px-20 grid md:grid-cols-2 gap-12 items-center">
+    <section class="py-16 px-6 md:px-20 grid md:grid-cols-2 gap-12 items-center" data-theme="light">
       <div data-aos="fade-up">
         <h2 class="text-2xl md:text-3xl font-bold mb-6">The Soul of Jepara</h2>
         <p class="text-base md:text-lg leading-relaxed text-gray-600 max-w-2xl">
@@ -78,7 +78,7 @@
     </section>
     
     <!-- Values -->
-    <section class="py-16 px-6 md:px-20 bg-gray-50 text-center">
+    <section class="py-16 px-6 md:px-20 bg-gray-50 text-center" data-theme="light">
       <h2 class="text-2xl md:text-3xl font-bold mb-12" data-aos="fade-up">
         What We Believe
       </h2>
@@ -115,7 +115,7 @@
     </section>
     
     <!-- Behind Every Piece -->
-    <section class="py-16 px-6 md:px-20 text-center">
+    <section class="py-16 px-6 md:px-20 text-center" data-theme="light">
       <blockquote
         class="text-xl md:text-2xl italic text-gray-700 max-w-2xl mx-auto"
         data-aos="fade-up"
@@ -136,7 +136,7 @@
     <!-- Call to Action -->
     <section
       class="relative h-[50vh] flex items-center justify-center bg-cover bg-center"
-      style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');"
+      style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');" data-theme="dark"
     >
       <div class="absolute inset-0 bg-black/50"></div>
       <div

@@ -1,5 +1,5 @@
 <template>
-  <section class="py-12 bg-white dark:bg-neutral-900">
+  <section class="py-12 bg-white">
     <div class="max-w-6xl mx-auto px-4">
       <h2 class="text-center font-bold text-3xl md:text-4xl mb-8">
         Our Clients
