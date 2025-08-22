@@ -1,6 +1,6 @@
 <template class="font-jakarta">
   <div class="flex container mx-auto max-w-4xl">
-    <Nav />
+    <NavBar />
   </div>
   <div class="">
     <HeroHome />

@@ -5,7 +5,7 @@
   >
     <div
       class="fixed top-0 left-0 w-full z-50 transition-colors duration-300"
-      :class="isDark ? 'bg-transparent' : 'bg-gray-100/20 backdrop-blur-lg'"
+      :class="isDark ? 'bg-transparent' : 'bg-transparent backdrop-blur-sm'"
     >
       <div class="container mx-auto flex items-center justify-between px-4 py-6 inline-flex">
         <!-- Logo -->
@@ -61,7 +61,7 @@
           <NuxtLinkLocale to="/about" class="hover:opacity-70 text-2xl" @click="toggleMenu">
             {{ $t('About') }}
           </NuxtLinkLocale>
-          <NuxtLinkLocale to="/about" class="hover:opacity-70 text-2xl" @click="toggleMenu">
+          <NuxtLinkLocale to="/how-we-work" class="hover:opacity-70 text-2xl" @click="toggleMenu">
             {{ $t('How We Work') }}
           </NuxtLinkLocale>
           <NuxtLinkLocale to="/blog" class="hover:opacity-70 text-2xl" @click="toggleMenu">
@@ -178,7 +178,7 @@ export default {
 
     // === OBSERVE SECTION ===
     observeSections() {
-      const sections = document.querySelectorAll("section");
+      const sections = document.querySelectorAll("section", "div");
 
       const observer = new IntersectionObserver(
         async (entries) => {
