@@ -61,6 +61,9 @@
           <NuxtLinkLocale to="/about" class="hover:opacity-70 text-2xl" @click="toggleMenu">
             {{ $t('About') }}
           </NuxtLinkLocale>
+          <NuxtLinkLocale to="/about" class="hover:opacity-70 text-2xl" @click="toggleMenu">
+            {{ $t('How We Work') }}
+          </NuxtLinkLocale>
           <NuxtLinkLocale to="/blog" class="hover:opacity-70 text-2xl" @click="toggleMenu">
             Blog
           </NuxtLinkLocale>
