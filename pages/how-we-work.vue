@@ -6,7 +6,7 @@
     <!-- Hero -->
     <section 
       class="relative h-[60vh] bg-cover bg-center flex items-center justify-center text-center text-white"
-      style="background-image: url('https://images.pexels.com/photos/5974338/pexels-photo-5974338.jpeg');" data-theme="light"
+      style="background-image: url('https://res.cloudinary.com/dwn4gzaqp/image/upload/v1756094939/How_We_Work_sho6ly.webp');" data-theme="light"
     >
       <div class="absolute inset-0"></div>
       <div class="relative z-10 px-6">
