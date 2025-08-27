@@ -6,7 +6,7 @@
     <!-- Hero Section -->
     <section
       class="relative h-[60vh] flex items-center justify-center bg-cover bg-center"
-      style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');"
+      style="background-image: url('https://res.cloudinary.com/dwn4gzaqp/image/upload/v1756181497/About_Us_gopj3h.webp');"
     >
       <div class="absolute inset-0 bg-black/40"></div>
       <div
