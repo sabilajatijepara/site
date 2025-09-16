@@ -19,6 +19,12 @@
         <nav class="hidden md:flex space-x-6">
           <NuxtLinkLocale to="/" class="hover:opacity-70">{{ $t('Home') }}</NuxtLinkLocale>
           <NuxtLinkLocale to="/about" class="hover:opacity-70">{{ $t('About') }}</NuxtLinkLocale>
+          <NuxtLinkLocale to="/how-we-work" class="hover:opacity-70">
+            {{ $t('How We Work') }}
+          </NuxtLinkLocale>
+          <NuxtLinkLocale to="/projects" class="hover:opacity-70">
+            {{ $t('Projects') }}
+          </NuxtLinkLocale>
           <NuxtLinkLocale to="/blog" class="hover:opacity-70">Blog</NuxtLinkLocale>
           <NuxtLinkLocale to="/contact" class="hover:opacity-70">{{ $t('Contact') }}</NuxtLinkLocale>
         </nav>
@@ -63,6 +69,9 @@
           </NuxtLinkLocale>
           <NuxtLinkLocale to="/how-we-work" class="hover:opacity-70 text-2xl" @click="toggleMenu">
             {{ $t('How We Work') }}
+          </NuxtLinkLocale>
+          <NuxtLinkLocale to="/projects" class="hover:opacity-70 text-2xl" @click="toggleMenu">
+            {{ $t('Projects') }}
           </NuxtLinkLocale>
           <NuxtLinkLocale to="/blog" class="hover:opacity-70 text-2xl" @click="toggleMenu">
             Blog

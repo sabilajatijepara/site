@@ -119,10 +119,10 @@
     >
       <div class="absolute inset-0 bg-black/20"></div>
       <NuxtLinkLocale
-        to="/about"
+        to="/projects"
         class="group relative z-10 flex items-center gap-3 text-2xl md:text-5xl text-white transition-all hover:tracking-wide"
       >
-        <span class="flex items-center">Gallery/Media</span>
+        <span class="flex items-center">Projects</span>
         <Icon
           name="mdi:arrow-right"
           class="w-8 h-8 md:w-10 md:h-10 transition-transform duration-300 group-hover:translate-x-2"

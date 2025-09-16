@@ -15,6 +15,12 @@
         <nav class="hidden md:flex space-x-6">
           <NuxtLinkLocale to="/" :class="textColorClass + ' hover:opacity-70'">Home</NuxtLinkLocale>
           <NuxtLinkLocale to="/about" :class="textColorClass + ' hover:opacity-70'">About</NuxtLinkLocale>
+          <NuxtLinkLocale to="/how-we-work" :class="textColorClass + 'hover:opacity-70'">
+            {{ $t('How We Work') }}
+          </NuxtLinkLocale>
+          <NuxtLinkLocale to="/projects" :class="textColorClass + 'hover:opacity-70'">
+            {{ $t('Projects') }}
+          </NuxtLinkLocale>
           <NuxtLinkLocale to="/blog" :class="textColorClass + ' hover:opacity-70'">Blog</NuxtLinkLocale>
           <NuxtLinkLocale to="/contact" :class="textColorClass + ' hover:opacity-70'">Contact</NuxtLinkLocale>
         </nav>

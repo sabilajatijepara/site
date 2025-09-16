@@ -5,7 +5,7 @@
   <div class="bg-white text-gray-800" data-theme="dark">
     <!-- Hero Section -->
     <section
-      class="relative h-[60vh] flex items-center justify-center bg-cover bg-center"
+      class="relative h-[60vh] md:h-[70vh] flex items-center justify-center bg-cover bg-center"
       style="background-image: url('https://res.cloudinary.com/dwn4gzaqp/image/upload/v1756181497/About_Us_gopj3h.webp');"
     >
       <div class="absolute inset-0 bg-black/40"></div>
