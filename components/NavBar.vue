@@ -15,14 +15,46 @@
         <nav class="hidden md:flex space-x-6">
           <NuxtLinkLocale to="/" :class="textColorClass + ' hover:opacity-70'">Home</NuxtLinkLocale>
           <NuxtLinkLocale to="/about" :class="textColorClass + ' hover:opacity-70'">About</NuxtLinkLocale>
-          <NuxtLinkLocale to="/how-we-work" :class="textColorClass + 'hover:opacity-70'">
+          <NuxtLinkLocale to="/how-we-work" :class="textColorClass + ' hover:opacity-70'">
             {{ $t('How We Work') }}
           </NuxtLinkLocale>
-          <NuxtLinkLocale to="/projects" :class="textColorClass + 'hover:opacity-70'">
+          <NuxtLinkLocale to="/projects" :class="textColorClass + ' hover:opacity-70'">
             {{ $t('Projects') }}
           </NuxtLinkLocale>
-          <NuxtLinkLocale to="/blog" :class="textColorClass + ' hover:opacity-70'">Blog</NuxtLinkLocale>
+          <NuxtLinkLocale to="https://blog.sabilajati.com" :class="textColorClass + ' hover:opacity-70'">Blog</NuxtLinkLocale>
           <NuxtLinkLocale to="/contact" :class="textColorClass + ' hover:opacity-70'">Contact</NuxtLinkLocale>
+          <!-- Language Dropdown
+          <div class="relative" @click="toggleDropdown">
+            <button
+              class="flex items-center space-x-2 px-3 py-2 border rounded-md hover:bg-gray-100"
+            >
+              <span>{{ getLabel(locale) }}</span>
+              <Icon
+                name="mdi:chevron-down"
+                class="w-4 h-4"
+              />
+            </button>
+      
+            Dropdown menu
+            <div
+              v-if="open"
+              class="absolute right-0 mt-2 w-40 bg-white border rounded-md shadow-lg z-50"
+            >
+              <ul>
+                <li
+                  v-for="l in availableLocales"
+                  :key="l"
+                >
+                  <button
+                    @click="changeLang(l)"
+                    class="w-full text-left px-4 py-2 hover:bg-gray-100"
+                  >
+                    {{ getLabel(l) }}
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>-->
         </nav>
 
         <!-- Mobile Menu Button -->
@@ -111,6 +143,31 @@ export default {
     window.removeEventListener('scroll', this.handleScroll);
   }
 };
+</script>
+
+<script setup>
+  const { locale, availableLocales } = useI18n();
+const open = ref(false);
+
+function toggleDropdown() {
+  open.value = !open.value;
+}
+
+function changeLang(l) {
+  locale.value = l;
+  open.value = false;
+}
+
+function getLabel(l) {
+  switch (l) {
+    case "id":
+      return "🇮🇩 ";
+    case "en":
+      return "🇬🇧 ";
+    default:
+      return l.toUpperCase();
+  }
+}
 </script>
 
 <style scoped>

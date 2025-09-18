@@ -1,6 +1,6 @@
 <template>
   <div class="flex container mx-auto max-w-4xl">
-    <Nav />
+    <NavBar />
   </div>
   <div class="bg-white text-gray-800" data-theme="dark">
     <!-- Hero Section -->
@@ -10,7 +10,7 @@
     >
       <div class="absolute inset-0 bg-black/40"></div>
       <div
-        class="relative z-10 text-center text-white px-4"
+        class="relative z-10 text-center text-white px-4 container"
         data-aos="fade-up"
         data-aos-duration="1200"
       >
@@ -21,7 +21,8 @@
           Furniture that carries the soul of Jepara into your home.
         </p>
       </div>
-    </section><!-- Our Story -->
+    </section>
+    <!-- Our Story -->
     <section class="py-16 px-6 md:px-20 text-center" data-theme="light">
       <h2 class="text-2xl md:text-3xl font-bold mb-6" data-aos="fade-up">
         Our Story
@@ -125,7 +126,7 @@
         tradition alive."
       </blockquote>
       <img
-        src="https://images.unsplash.com/photo-1577985051167-0d34bd6bca49?auto=format&fit=crop&w=400&q=80"
+        src="https://res.cloudinary.com/dwn4gzaqp/image/upload/v1756181497/About_Us_gopj3h.webp"
         alt="Jepara artisan portrait"
         class="mt-10 rounded-full w-32 h-32 md:w-40 md:h-40 mx-auto shadow-lg object-cover"
         data-aos="zoom-in"

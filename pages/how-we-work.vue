@@ -96,6 +96,7 @@
     </section>
 
     <!-- Who We Are -->
+    <div class="grid grid-cols-1 md:grid-cols-2">
     <section 
       class="relative bg-cover bg-center text-white text-center cursor-pointer flex items-center justify-center h-[24vh]"
       style="background-image: url('https://images.pexels.com/photos/5466226/pexels-photo-5466226.jpeg');"
@@ -129,6 +130,7 @@
         />
       </NuxtLinkLocale>
     </section>
+    </div>
   </section>
   <div>
     <Footer />
