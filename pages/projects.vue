@@ -83,7 +83,7 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from "vue";
 
-const { data: projects } = await useFetch("http://api.sabilajati.com/projects");
+const { data: projects } = await useFetch("https://api.sabilajati.com/projects");
 
 const lightboxIndex = ref(null);
 

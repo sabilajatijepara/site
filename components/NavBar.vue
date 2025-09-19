@@ -91,6 +91,9 @@
           <NuxtLinkLocale to="/" class="hover:opacity-70 text-2xl" @click="toggleMenu">Home</NuxtLinkLocale>
           <NuxtLinkLocale to="/about" class="hover:opacity-70 text-2xl" @click="toggleMenu">About</NuxtLinkLocale>
           <NuxtLinkLocale to="/how-we-work" class="hover:opacity-70 text-2xl" @click="toggleMenu">How We Work</NuxtLinkLocale>
+          <NuxtLinkLocale to="/projects" class="hover:opacity-70 text-2xl" @click="toggleMenu">
+            {{ $t('Projects') }}
+          </NuxtLinkLocale>
           <NuxtLinkLocale to="/blog" class="hover:opacity-70 text-2xl" @click="toggleMenu">Blog</NuxtLinkLocale>
           <NuxtLinkLocale to="/contact" class="hover:opacity-70 text-2xl" @click="toggleMenu">Contact</NuxtLinkLocale>
           <hr class="h-px my-8 bg-gray-200 border-0">
