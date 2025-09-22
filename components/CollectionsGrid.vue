@@ -44,31 +44,31 @@ const collections = [
     name: 'Cafe & Resto',
     description: 'Stylish and durable furniture for cafes, restaurants, and bistros.',
     image: 'https://res.cloudinary.com/dwn4gzaqp/image/upload/v1750857486/cafe_xieolw.webp',
-    link: '/category/cafe'
+    link: 'https://sabilajati.com/categories/Cafe'
   },
   {
     name: 'Home Living',
     description: 'Comfortable and elegant furniture for residential spaces.',
     image: 'https://res.cloudinary.com/dwn4gzaqp/image/upload/v1750855824/living_room_uxhsfe.webp',
-    link: '/category/home-living'
+    link: 'https://sabilajati.com/categories/Rumah'
   },
   {
     name: 'School',
     description: 'Ergonomic and functional furniture for educational environments.',
     image: 'https://res.cloudinary.com/dwn4gzaqp/image/upload/v1750857308/school_xdg9z3.webp',
-    link: '/category/school'
+    link: 'https://sabilajati.com/categories/Sekolah'
   },
   {
     name: 'Bungalow',
     description: 'Complete furniture solutions for vacation homes and bungalows.',
     image: 'https://res.cloudinary.com/dwn4gzaqp/image/upload/v1750860966/sekar-ayu-spa-salon-bungalow_onnd0f.webp',
-    link: '/category/bungalow'
+    link: 'https://sabilajati.com/categories/Bungalow'
   },
   {
     name: 'Gazebo',
     description: 'Elegant outdoor structures perfect for gardens and patios.',
     image: 'https://res.cloudinary.com/dwn4gzaqp/image/upload/v1750860873/andre-benz-L-URIPpFsbc-unsplash_qebu20.webp',
-    link: '/category/gazebo'
+    link: 'https://sabilajati.com/categories/Gazebo'
   }
 ]
 </script>

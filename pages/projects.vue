@@ -14,7 +14,7 @@
     <!-- Grid Portfolio -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       <div
-        v-for="(project, index) in projects.projects"
+        v-for="(project, index) in projects"
         :key="index"
         class="relative group overflow-hidden rounded-xl shadow-md cursor-pointer"
         @click="openLightbox(index)"
@@ -43,12 +43,12 @@
     >
       <div class="relative max-w-5xl w-full p-4 flex flex-col items-center">
         <img
-          :src="projects.projects[lightboxIndex].image"
-          :alt="projects.projects[lightboxIndex].title"
+          :src="projects[lightboxIndex].image"
+          :alt="projects[lightboxIndex].title"
           class="w-full max-h-[80vh] object-contain rounded-lg shadow-lg"
         />
         <p class="text-white text-center mt-4 text-lg">
-          {{ projects.projects[lightboxIndex].title }}
+          {{ projects[lightboxIndex].title }}
         </p>
 
         <!-- Close button -->

@@ -47,7 +47,7 @@
   <div class="flex justify-center">
     <div>
       <NuxtLink
-        to="/products"
+        to="http://sabilajati.com"
         class="relative overflow-hidden px-6 py-3 rounded-3xl border border-blue-600 text-blue-600 font-medium transition-all duration-300 group inline-block"
       >
         <span class="relative z-10 group-hover:text-white">View All Products</span>
@@ -69,7 +69,7 @@ const products = computed(() =>
     name: item.name,
     description: item.description,
     image: item.imageURL[0] || '', // pakai gambar pertama
-    link: `/products/${item.slug}`, // buat link dinamis berdasarkan slug
+    link: `https://sabilajati.com/products/${item.id}`, // buat link dinamis berdasarkan slug, sementara ID
     price: item.price
   }))
 )
