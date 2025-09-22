@@ -4,7 +4,7 @@
       v-for="(item, index) in collections"
       :key="index"
       :class="[
-        'relative h-80 rounded-3xl overflow-hidden',
+        'relative h-80 rounded-3xl hover:rounded-2xl duration-300 overflow-hidden',
         (index === collections.length - 1 && collections.length % 2 !== 0)
           ? 'md:col-span-2'
           : ''

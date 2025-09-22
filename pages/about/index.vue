@@ -136,23 +136,26 @@
     
     <!-- Call to Action -->
     <section
-      class="relative h-[50vh] flex items-center justify-center bg-cover bg-center"
-      style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');" data-theme="dark"
+      class="relative h-[50vh] flex items-center justify-center bg-red-700"
     >
-      <div class="absolute inset-0 bg-black/50"></div>
       <div
         class="relative z-10 text-center text-white px-4"
         data-aos="fade-up"
         data-aos-duration="1000"
       >
+        <div class="tracking-widest text-sm">Learn More</div>
         <h2 class="text-2xl md:text-4xl font-bold mb-6 max-w-2xl mx-auto">
-          Bring the Warmth of Jepara into Your Home
+          About Our Company
         </h2>
+        <div class="text-base line-clamp-3">
+          Download Our Company Profile to learn more about our company, history and the products we've made.
+        </div>
+        <div class="py-3"></div>
         <NuxtLink
-          to="/products"
+          to="https://docs.google.com/viewerng/viewer?url=https://sbjbeta.vercel.app/pdf/company-profile.pdf"
           class="inline-block bg-amber-600 hover:bg-amber-700 text-white font-semibold px-6 py-3 rounded-full shadow-lg transition"
         >
-          Explore Our Collection
+          Download / View
         </NuxtLink>
       </div>
     </section>

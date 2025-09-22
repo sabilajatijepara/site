@@ -14,7 +14,7 @@
         <!-- Desktop Menu -->
         <nav class="hidden md:flex space-x-6">
           <NuxtLinkLocale to="/" :class="textColorClass + ' hover:opacity-70'">Home</NuxtLinkLocale>
-          <NuxtLinkLocale to="/about" :class="textColorClass + ' hover:opacity-70'">About</NuxtLinkLocale>
+          <NuxtLinkLocale to="/about" :class="textColorClass + ' hover:opacity-70'">{{ $t('About') }}</NuxtLinkLocale>
           <NuxtLinkLocale to="/how-we-work" :class="textColorClass + ' hover:opacity-70'">
             {{ $t('How We Work') }}
           </NuxtLinkLocale>
@@ -22,7 +22,7 @@
             {{ $t('Projects') }}
           </NuxtLinkLocale>
           <NuxtLinkLocale to="https://blog.sabilajati.com" :class="textColorClass + ' hover:opacity-70'">Blog</NuxtLinkLocale>
-          <NuxtLinkLocale to="/contact" :class="textColorClass + ' hover:opacity-70'">Contact</NuxtLinkLocale>
+          <NuxtLinkLocale to="/contacts" :class="textColorClass + ' hover:opacity-70'">{{ $t('Contact') }}</NuxtLinkLocale>
           <!-- Language Dropdown
           <div class="relative" @click="toggleDropdown">
             <button
@@ -95,7 +95,7 @@
             {{ $t('Projects') }}
           </NuxtLinkLocale>
           <NuxtLinkLocale to="/blog" class="hover:opacity-70 text-2xl" @click="toggleMenu">Blog</NuxtLinkLocale>
-          <NuxtLinkLocale to="/contact" class="hover:opacity-70 text-2xl" @click="toggleMenu">Contact</NuxtLinkLocale>
+          <NuxtLinkLocale to="/contacts" class="hover:opacity-70 text-2xl" @click="toggleMenu">Contact</NuxtLinkLocale>
           <hr class="h-px my-8 bg-gray-200 border-0">
           <div class="pt-8" :class="isDark ? 'text-white' : 'text-black'">
             <p class="mb-2 font-bold">Language</p>

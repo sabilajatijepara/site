@@ -7,7 +7,7 @@
       class="fixed top-0 left-0 w-full z-50 transition-colors duration-300"
       :class="isDark ? 'bg-transparent' : 'bg-transparent backdrop-blur-sm'"
     >
-      <div class="container mx-auto flex items-center justify-between px-4 py-6 inline-flex">
+      <div class="container mx-auto flex items-center justify-between px-4 py-6">
         <!-- Logo -->
         <h1 class="text-xl font-bold">
           <NuxtLinkLocale to="/" class="">
@@ -26,7 +26,7 @@
             {{ $t('Projects') }}
           </NuxtLinkLocale>
           <NuxtLinkLocale to="https://blog.sabilajati.com" class="hover:opacity-70">Blog</NuxtLinkLocale>
-          <NuxtLinkLocale to="/contact" class="hover:opacity-70">{{ $t('Contact') }}</NuxtLinkLocale>
+          <NuxtLinkLocale to="/contacts" class="hover:opacity-70">{{ $t('Contact') }}</NuxtLinkLocale>
           <!-- Language Dropdown 
           <div class="relative" @click="toggleDropdown">
             <button
@@ -108,7 +108,7 @@
           <NuxtLinkLocale to="https://blog.sabilajati.com" class="hover:opacity-70 text-2xl" @click="toggleMenu">
             Blog
           </NuxtLinkLocale>
-          <NuxtLinkLocale to="/contact" class="hover:opacity-70 text-2xl" @click="toggleMenu">
+          <NuxtLinkLocale to="/contacts" class="hover:opacity-70 text-2xl" @click="toggleMenu">
             {{ $t('Contact') }}
           </NuxtLinkLocale>
           <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
