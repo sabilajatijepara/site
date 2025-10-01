@@ -47,7 +47,7 @@
   <div class="flex justify-center">
     <div>
       <NuxtLink
-        to="http://sabilajati.com"
+        to="/products"
         class="relative overflow-hidden px-6 py-3 rounded-3xl border border-blue-600 text-blue-600 font-medium transition-all duration-300 group inline-block"
       >
         <span class="relative z-10 group-hover:text-white">View All Products</span>

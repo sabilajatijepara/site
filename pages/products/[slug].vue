@@ -167,7 +167,7 @@ const whatsappLink = computed(() => {
 })
 
 useHead(() => ({
-  title: `${displayName.value} | Sabila Jati Furniture`,
+  title: `${displayName.value} | Sabilajati Jepara`,
   meta: [
     { name: 'description', content: displayDesc.value.slice(0, 150) },
     { property: 'og:title', content: displayName.value },
