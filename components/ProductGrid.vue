@@ -1,6 +1,6 @@
 <template>
-  <div v-if="pending" class="text-center">Sedang memuat produk...</div>
-  <div v-else-if="error" class="text-center text-red-500">Gagal memuat data produk.</div>
+  <div v-if="pending" class="text-center">Loading...</div>
+  <div v-else-if="error" class="text-center text-red-500">Failed to load product data. Please try again later.</div>
   <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
     <div
       v-for="(item, index) in products"
@@ -30,11 +30,11 @@
       >
         <h3 class="text-xl md:text-2xl font-semibold">{{ item.name }}</h3>
         <div class="py-1"></div>
-        <p class="text-sm truncate">{{ item.description }}</p>
+        <p class="text-sm truncate pr-4">{{ item.description }}</p>
         <div class="py-2"></div>
         <div class="flex w-full justify-between">
-          <div>Rp {{ item.price.toLocaleString('id-ID') }}</div>
-          <div class="px-4">
+          <!--<div>Rp {{ item.price.toLocaleString('id-ID') }}</div>-->
+          <div class="">
             <NuxtLink :to="item.link" class="text-sm px-3 py-2 rounded-full bg-white text-black hover:bg-gray-200 transition delay-150">
               View Product
             </NuxtLink>
@@ -66,10 +66,10 @@ const { data: response, pending, error } = await useFetch('https://api.sabilajat
 // Transformasi data agar sesuai dengan struktur yang template kamu harapkan
 const products = computed(() =>
   (response.value || []).slice(0,4).map((item) => ({
-    name: item.name,
-    description: item.description,
+    name: item.name_en,
+    description: item.desc_en,
     image: item.imageURL[0] || '', // pakai gambar pertama
-    link: `https://sabilajati.com/products/${item.id}`, // buat link dinamis berdasarkan slug, sementara ID
+    link: `/products/${item.slug_en}`, // buat link dinamis berdasarkan slug, sementara ID
     price: item.price
   }))
 )
