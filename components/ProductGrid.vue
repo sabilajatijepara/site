@@ -65,7 +65,7 @@ const { data: response, pending, error } = await useFetch('https://api.sabilajat
 
 // Transformasi data agar sesuai dengan struktur yang template kamu harapkan
 const products = computed(() =>
-  (response.value || []).slice(0,4).map((item) => ({
+  (response.value?.data || []).slice(0,4).map((item) => ({
     name: item.name_en,
     description: item.desc_en,
     image: item.imageURL[0] || '', // pakai gambar pertama

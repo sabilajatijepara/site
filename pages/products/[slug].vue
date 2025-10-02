@@ -69,7 +69,7 @@
               {{ displayName }}
             </h1>
             <p class="text-gray-500 text-sm mb-4 capitalize">
-              {{ product.categories?.[0]?.name?.en || product.categories?.[0]?.name?.id || "Uncategorized" }}
+              {{ product.categories?.[0] || product.categories?.[0] || "Uncategorized" }}
             </p>
 
             <p class="text-2xl font-semibold text-green-600 mb-6">

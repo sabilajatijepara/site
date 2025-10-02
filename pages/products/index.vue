@@ -95,22 +95,26 @@
           </div>
         </div>
       </div>
-      <!--<div class="flex justify-center mt-6 gap-2">
-      <button @click="goToPage(currentPage-1)" :disabled="currentPage===1" class="px-3 py-1 bg-gray-200 rounded">
-        Prev
-      </button>
-      <button
-        v-for="page in totalPages"
-        :key="page"
-        @click="goToPage(page)"
-        :class="['px-3 py-1 rounded', currentPage===page ? 'bg-blue-500 text-white' : 'bg-gray-200']"
-      >
-        {{ page }}
-      </button>
-      <button @click="goToPage(currentPage+1)" :disabled="currentPage===totalPages" class="px-3 py-1 bg-gray-200 rounded">
-        Next
-      </button>
-    </div>-->
+      <!-- Tombol Load More -->
+      <div v-if="hasMore" class="text-center mt-10">
+        <button
+          @click="loadMore"
+          :disabled="loadingMore"
+          class="px-8 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-700 transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center mx-auto gap-2"
+        >
+          <svg
+            v-if="loadingMore"
+            class="w-5 h-5 animate-spin text-white"
+            fill="none"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+          </svg>
+          <span>{{ loadingMore ? 'Loading...' : 'Load More' }}</span>
+        </button>
+      </div>
     </div>
   </section>
 </template>
@@ -154,10 +158,11 @@ const { data: response, pending, error } = await useFetch('https://api.sabilajat
 // Pagination state
 const currentPage = ref(1)
 const perPage = 8 // jumlah produk per halaman
+const loadingMore = ref(false)
 
 // Transformasi data agar sesuai dengan struktur yang template kamu harapkan
-const products = computed(() =>
-  (response.value || []).map(item => ({
+const allProducts = computed(() =>
+  (response.value?.data || []).map(item => ({
     name: item.name_en,
     description: item.desc_en,
     image: item.imageURL?.[0] || '', // pakai gambar pertama
@@ -165,6 +170,29 @@ const products = computed(() =>
     price: item.price
   }))
 )
+
+// Produk yang sedang ditampilkan (pagination)
+const products = computed(() => {
+  return allProducts.value.slice(0, currentPage.value * perPage)
+})
+
+// Total produk
+const totalCount = computed(() => response.value?.totalCount || 0)
+
+// Apakah masih bisa load more
+const hasMore = computed(() => products.value.length < totalCount.value)
+
+// Fungsi Load More
+const loadMore = async () => {
+  if (!hasMore.value) return
+  loadingMore.value = true // ⬅️ mulai loading
+
+  // simulasi delay loading (misalnya 500ms)
+  await new Promise(resolve => setTimeout(resolve, 500))
+
+  currentPage.value++
+  loadingMore.value = false // ⬅️ selesai loading
+}
 
 /*const paginatedProducts = computed(() => {
   const arr = allProducts.value || [] // fallback
