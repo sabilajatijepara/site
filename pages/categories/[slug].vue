@@ -1,14 +1,16 @@
 <template>
+  <!-- Navbar -->
   <section>
     <NavProducts />
   </section>
+
   <div class="py-8"></div>
-  <!-- Hero -->
-  <section>
-    
-  </section>
+
+  <!-- Hero Section (opsional, bisa dikosongkan) -->
+  <section></section>
+
   <!-- Kategori -->
-  <section class="">
+  <section>
     <div class="max-w-6xl mx-auto px-4">
       <div class="py-6"></div>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 gap-y-8">
@@ -29,17 +31,23 @@
           </div>
 
           <!-- Teks -->
-          <h3 class=" text-lg font-semibold text-gray-900">{{ category.name }}</h3>
-          <!-- <p class="text-sm">{{ category.desc }}</p> -->
+          <h3 class="text-lg font-semibold text-gray-900">{{ category.name }}</h3>
         </NuxtLink>
       </div>
     </div>
   </section>
-  <!-- Products -->
+
+  <!-- Products Section -->
   <section class="py-8">
     <div class="max-w-6xl mx-auto px-4">
-      <div class="text-sm capitalize font-bold py-2">ALL PRODUCTS</div>
-      <!-- ✅ Skeleton Loading -->
+      <div class="flex justify-between text-sm capitalize font-bold py-2">
+        <div class="">{{ titleProducts }}</div>
+        <div>
+          <NuxtLink to="/products" class="px-3 py-2 border border-black rounded-full hover:bg-yellow-300 duration-300 transition">ALL PRODUCTS</NuxtLink>
+        </div>
+      </div>
+      <div class="py-2"></div>
+      <!-- Skeleton Loading -->
       <div v-if="pending" class="grid grid-cols-2 md:grid-cols-4 gap-4">
         <div
           v-for="n in 4"
@@ -53,25 +61,23 @@
           </div>
         </div>
       </div>
-      
-      <!-- ❌ Error State -->
+
+      <!-- Error State -->
       <div v-else-if="error" class="text-center text-red-500 py-8">
         Failed to load product data. Please try again later.
       </div>
-      
-      <!-- ✅ Product Cards -->
+
+      <!-- Product Cards -->
       <div v-else class="grid grid-cols-2 md:grid-cols-4 gap-2">
         <div
           v-for="(item, index) in products"
           :key="index"
           :class="[
             'border-2 border-black overflow-hidden bg-white shadow-sm group transition hover:shadow-lg cursor-pointer',
-            (index === products.length - 1 && products.length % 2 !== 0)
-              ? 'md:col-span-2'
-              : ''
+            (index === products.length - 1 && products.length % 2 !== 0) ? 'md:col-span-2' : ''
           ]"
         >
-          <!-- 📸 Product Image -->
+          <!-- Product Image -->
           <div class="w-full aspect-square overflow-hidden relative">
             <img
               :src="item.image"
@@ -79,16 +85,16 @@
               class="absolute inset-0 w-full h-full object-cover transition duration-300 group-hover:scale-105"
             />
           </div>
-      
-          <!-- 📏 Garis pemisah -->
+
+          <!-- Garis pemisah -->
           <div class="border-t-2 border-black"></div>
-      
-          <!-- 📦 Bottom Content -->
+
+          <!-- Bottom Content -->
           <div class="grid grid-cols-[1fr_auto] items-center w-full h-20">
             <h3 class="text-base font-semibold line-clamp-3 px-4">
               {{ item.name }}
             </h3>
-          
+
             <NuxtLink
               :to="item.link"
               class="bg-yellow-300 hover:bg-gray-200 text-sm text-gray-900 px-6 flex items-center justify-center h-full transition border-l-2 border-black"
@@ -98,7 +104,8 @@
           </div>
         </div>
       </div>
-      <!-- Tombol Load More -->
+
+      <!-- Load More Button -->
       <div v-if="hasMore" class="text-center mt-10">
         <button
           @click="loadMore"
@@ -120,10 +127,15 @@
       </div>
     </div>
   </section>
-  <FooProducts/>
+
+  <FooProducts />
 </template>
 
 <script setup>
+import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
+import { useRoute } from 'vue-router'
+
+// === KATEGORI HARD-CODED ===
 const categories = [
   {
     name: "Home Living",
@@ -155,65 +167,61 @@ const categories = [
   },
 ]
 
-const { data: response, pending, error } = useFetch('https://api.sabilajati.com/products')
+const titleProducts = computed(() => {
+  // cek apakah ada kategori di route
+  const slug = route.params.slug
+  if (!slug) return 'ALL PRODUCTS'
 
-// Pagination state
+  // cari nama kategori dari array static categories
+  const cat = categories.find(c => c.link.endsWith(slug))
+  return cat ? `${cat.name.toUpperCase()} PRODUCTS` : 'ALL PRODUCTS'
+})
+
+// === ROUTE & API FETCH ===
+const route = useRoute()
+const slug = route.params.slug
+const { data: categoryData, pending, error } = useFetch(`https://api.sabilajati.com/categories/${slug}`)
+
+// === PAGINATION STATE ===
 const currentPage = ref(1)
-const perPage = ref(8) // jumlah produk per halaman
+const perPage = ref(8)
 const loadingMore = ref(false)
 
-// Deteksi lebar layar untuk ganti jumlah produk
+// === RESPONSIVE PER PAGE ===
 const updatePerPage = () => {
   const width = window.innerWidth
-  if (width >= 1024) {
-    perPage.value = 16   // desktop besar
-  } else if (width >= 768) {
-    perPage.value = 12   // tablet / md screen
-  } else {
-    perPage.value = 8    // mobile
-  }
+  if (width >= 1024) perPage.value = 16
+  else if (width >= 768) perPage.value = 12
+  else perPage.value = 8
 }
 
-// jalankan saat mount dan saat resize
 onMounted(() => {
   updatePerPage()
   window.addEventListener('resize', updatePerPage)
 })
-onBeforeUnmount(() => {
-  window.removeEventListener('resize', updatePerPage)
-})
+onBeforeUnmount(() => window.removeEventListener('resize', updatePerPage))
 
-// Transformasi data agar sesuai dengan struktur yang template kamu harapkan
+// === TRANSFORM DATA ===
 const allProducts = computed(() =>
-  (response.value?.data || []).map(item => ({
+  (categoryData.value?.products || []).map(item => ({
     name: item.name_en,
     description: item.desc_en,
-    image: item.imageURL?.[0] || '', // pakai gambar pertama
+    image: item.imageURL?.[0] || '',
     link: `/products/${item.slug_en}`,
     price: item.price
   }))
 )
 
-// Produk yang sedang ditampilkan (pagination)
-const products = computed(() => {
-  return allProducts.value.slice(0, currentPage.value * perPage.value)
-})
+const products = computed(() => allProducts.value.slice(0, currentPage.value * perPage.value))
 
-// Total produk
-const totalCount = computed(() => response.value?.totalCount || 0)
-
-// Apakah masih bisa load more
+const totalCount = computed(() => categoryData.value?.total || allProducts.value.length)
 const hasMore = computed(() => products.value.length < totalCount.value)
 
-// Fungsi Load More
 const loadMore = async () => {
   if (!hasMore.value) return
-  loadingMore.value = true // ⬅️ mulai loading
-
-  // simulasi delay loading (misalnya 500ms)
+  loadingMore.value = true
   await new Promise(resolve => setTimeout(resolve, 500))
-
   currentPage.value++
-  loadingMore.value = false // ⬅️ selesai loading
+  loadingMore.value = false
 }
 </script>

@@ -44,31 +44,25 @@ const collections = [
     name: 'Cafe & Resto',
     description: 'Stylish and durable furniture for cafes, restaurants, and bistros.',
     image: 'https://res.cloudinary.com/dwn4gzaqp/image/upload/v1750857486/cafe_xieolw.webp',
-    link: 'https://sabilajati.com/categories/Cafe'
+    link: '/categories/cafe-resto'
   },
   {
     name: 'Home Living',
     description: 'Comfortable and elegant furniture for residential spaces.',
     image: 'https://res.cloudinary.com/dwn4gzaqp/image/upload/v1750855824/living_room_uxhsfe.webp',
-    link: 'https://sabilajati.com/categories/Rumah'
+    link: '/categories/home-living'
   },
   {
-    name: 'School',
-    description: 'Ergonomic and functional furniture for educational environments.',
+    name: 'Institutions',
+    description: 'Durable furniture designed for schools and institutions.',
     image: 'https://res.cloudinary.com/dwn4gzaqp/image/upload/v1750857308/school_xdg9z3.webp',
-    link: 'https://sabilajati.com/categories/Sekolah'
+    link: '/categories/institutions'
   },
   {
-    name: 'Bungalow',
-    description: 'Complete furniture solutions for vacation homes and bungalows.',
+    name: 'Structures',
+    description: 'Quality structures for indoor and outdoor spaces.',
     image: 'https://res.cloudinary.com/dwn4gzaqp/image/upload/v1750860966/sekar-ayu-spa-salon-bungalow_onnd0f.webp',
-    link: 'https://sabilajati.com/categories/Bungalow'
+    link: '/categories/structures'
   },
-  {
-    name: 'Gazebo',
-    description: 'Elegant outdoor structures perfect for gardens and patios.',
-    image: 'https://res.cloudinary.com/dwn4gzaqp/image/upload/v1750860873/andre-benz-L-URIPpFsbc-unsplash_qebu20.webp',
-    link: 'https://sabilajati.com/categories/Gazebo'
-  }
 ]
 </script>

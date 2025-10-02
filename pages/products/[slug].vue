@@ -89,44 +89,15 @@
             >
               💬 Order via WhatsApp
             </a>
-            <NuxtLink to="/products" class="inline-block bg-gray-200 text-gray-800 text-lg font-semibold py-3 px-6 rounded-2xl hover:bg-gray-300 transition-all w-full md:w-auto text-center shadow-sm hover:shadow-md">
-              ← Back to Products
-            </NuxtLink>
+            <button @click="goBack" class="inline-block bg-gray-200 text-gray-800 text-lg font-semibold py-3 px-6 rounded-2xl hover:bg-gray-300 transition-all w-full md:w-auto text-center shadow-sm hover:shadow-md">
+              ← Go Back
+            </button>
           </div>
         </div>
       </div>
     </main>
 
-    <!-- ===== FOOTER ===== -->
-    <footer class="bg-white border-t mt-10">
-      <div class="max-w-6xl mx-auto py-10 px-4 md:px-10 grid grid-cols-1 md:grid-cols-3 gap-8 text-gray-700">
-        <div>
-          <h3 class="font-bold mb-3 text-gray-900">Sabila Jati</h3>
-          <p>Premium furniture handcrafted in Indonesia. Elegant, minimal, and timeless.</p>
-        </div>
-
-        <div>
-          <h3 class="font-bold mb-3 text-gray-900">Quick Links</h3>
-          <ul class="space-y-1">
-            <li><NuxtLink to="/" class="hover:text-black">Home</NuxtLink></li>
-            <li><NuxtLink to="/products" class="hover:text-black">Products</NuxtLink></li>
-            <li><NuxtLink to="/about" class="hover:text-black">About</NuxtLink></li>
-            <li><NuxtLink to="/contact" class="hover:text-black">Contact</NuxtLink></li>
-          </ul>
-        </div>
-
-        <div>
-          <h3 class="font-bold mb-3 text-gray-900">Contact</h3>
-          <p>📞 +62 812 3456 7890</p>
-          <p>📧 info@sabilajati.com</p>
-          <p>📍 Jepara, Indonesia</p>
-        </div>
-      </div>
-
-      <div class="border-t py-4 text-center text-gray-500 text-sm">
-        © 2025 Sabila Jati. All rights reserved.
-      </div>
-    </footer>
+    <FooProducts />
   </div>
 </template>
 
@@ -165,6 +136,14 @@ const whatsappLink = computed(() => {
   const text = `Hello, I'm interested in the product: ${displayName.value}`
   return `https://wa.me/${phone}?text=${encodeURIComponent(text)}`
 })
+
+function goBack() {
+  if (document.referrer) {
+    window.history.back();
+  } else {
+    window.location.href = '/products'; // fallback
+  }
+}
 
 useHead(() => ({
   title: `${displayName.value} | Sabilajati Jepara`,
