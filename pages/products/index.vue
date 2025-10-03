@@ -2,14 +2,27 @@
   <section>
     <NavProducts />
   </section>
-  <div class="py-8"></div>
+  <div class="py-12 md:py-16"></div>
   <!-- Hero -->
-  <section>
-    
+  <section class="container max-w-6xl mx-auto px-4">
+    <div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <div class="text-3xl md:text-4xl font-bold">Stylish and Durable Furniture Collection
+          </div>
+        </div>
+        <div>
+          <div class="text-sm">
+            Discover our stylish and Durable Fumiture Dotection designed to olevate your space with niegance and latning quality Perfect for any room, these pieces biend modern design with exceptional functionality and comfort.
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
+  <div class="py-4"></div>
   <!-- Kategori -->
   <section class="">
-    <div class="max-w-6xl mx-auto px-4">
+    <div class="container max-w-6xl mx-auto px-4">
       <div class="py-6"></div>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 gap-y-8">
         <NuxtLink
@@ -37,7 +50,7 @@
   </section>
   <!-- Products -->
   <section class="py-8">
-    <div class="max-w-6xl mx-auto px-4">
+    <div class="container max-w-6xl mx-auto px-4">
       <div class="text-sm capitalize font-bold py-2">ALL PRODUCTS</div>
       <!-- ✅ Skeleton Loading -->
       <div v-if="pending" class="grid grid-cols-2 md:grid-cols-4 gap-4">
