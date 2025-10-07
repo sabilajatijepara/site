@@ -3,11 +3,25 @@
   <section>
     <NavProducts />
   </section>
-
-  <div class="py-8"></div>
-
-  <!-- Hero Section (opsional, bisa dikosongkan) -->
-  <section></section>
+  
+  <div class="py-12 md:py-16"></div>
+  <!-- Hero -->
+  <section class="container max-w-6xl mx-auto px-4">
+    <div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <div class="text-3xl md:text-4xl font-bold">Stylish and Durable Furniture Collection
+          </div>
+        </div>
+        <div>
+          <div class="text-sm">
+            Discover our stylish and Durable Fumiture Dotection designed to olevate your space with niegance and latning quality Perfect for any room, these pieces biend modern design with exceptional functionality and comfort.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="py-4"></div>
 
   <!-- Kategori -->
   <section>
@@ -127,7 +141,40 @@
       </div>
     </div>
   </section>
-
+  <div class="py-4"></div>
+  <section
+    class="relative h-[60vh] w-full bg-cover bg-center flex items-end rounded-3xl"
+    style="background-image: url('https://unsplash.com/photos/WPqcd-gpJeE/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8MzB8fGZ1cm5pdHVyZXN8aWR8MHwwfHx8MTc1OTcyNjA0N3ww&force=true&w=1920');"
+  >
+    <!-- Gradient Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-white/60 to-white"></div>
+  
+    <!-- Content -->
+    <div
+      class="relative z-10 w-full max-w-6xl mx-auto px-6 pb-10 flex flex-col items-center text-center gap-6 md:flex-row md:justify-between md:items-end md:text-left"
+    >
+      <!-- Text -->
+      <div>
+        <h2 class="text-3xl md:text-4xl font-bold mb-3">
+          Looking for a custom product designed just for you?
+        </h2>
+        <p class="text-lg text-gray-700 max-w-xl">
+          We craft furniture that reflects your unique vision — tailored, timeless, and made to last.
+        </p>
+      </div>
+  
+      <!-- Button -->
+      <a
+        href="https://wa.me/6281234567890"
+        target="_blank"
+        class="inline-flex items-center gap-2 px-8 py-3 bg-green-500 text-white font-semibold rounded-lg hover:bg-green-400 transition md:mb-2"
+      >
+        <Icon name="mdi:whatsapp" size="1.5em" />
+        Contact Us
+      </a>
+    </div>
+  </section>
+  <div class="py-8"></div>
   <FooProducts />
 </template>
 

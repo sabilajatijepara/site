@@ -15,11 +15,11 @@
             We are manufacturers of school tables and chairs, cafe tables and chairs, as well as gazebos and bungalows.
           </div>
           <div class="py-2">
-            <NuxtLink to="/about" class="font-bold text-sm hover:underline hover:duration-300 transition">More About us.</NuxtLink>
+            <NuxtLink to="/about" class="font-bold text-sm hover:underline hover:duration-300 transition border border-black px-3 py-2 rounded-full">More About us.</NuxtLink>
           </div>
         </div>
         <div class="flex flex-col">
-          <div class="flex space-x-8">
+          <div class="flex py-4 space-x-8">
             <div>
               <NuxtLink to="/" class="font-bold text-xl">Home.</NuxtLink>
             </div>

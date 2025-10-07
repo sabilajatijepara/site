@@ -1,24 +1,11 @@
 <template>
   <div class="bg-gray-50 min-h-screen flex flex-col">
 
-    <!-- ===== HEADER / NAVBAR ===== -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
-      <div class="max-w-6xl mx-auto flex justify-between items-center py-4 px-4 md:px-10">
-        <div class="text-2xl font-bold text-gray-900">Sabila Jati</div>
-        <nav class="hidden md:flex gap-6 text-gray-700 font-medium">
-          <NuxtLink to="/" class="hover:text-black transition">Home</NuxtLink>
-          <NuxtLink to="/products" class="hover:text-black transition">Products</NuxtLink>
-          <NuxtLink to="/about" class="hover:text-black transition">About</NuxtLink>
-          <NuxtLink to="/contact" class="hover:text-black transition">Contact</NuxtLink>
-        </nav>
-        <!-- Mobile Menu Icon -->
-        <button class="md:hidden text-gray-700">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-      </div>
-    </header>
+    <div>
+      <NavProducts />
+    </div>
+    
+    <div class="py-4"></div>
 
     <!-- ===== PRODUCT DETAIL MAIN ===== -->
     <main class="flex-grow py-10 px-4 md:px-10">
@@ -32,7 +19,7 @@
           </div>
         </div>
 
-        <div v-else class="flex flex-col items-center">
+        <div v-else class="flex flex-col">
           <div class="w-full overflow-hidden rounded-2xl shadow-lg bg-white">
             <img
               :src="activeImage"
@@ -40,15 +27,15 @@
               class="w-full h-[320px] md:h-[480px] object-cover transition-all duration-700 hover:scale-[1.02]"
             />
           </div>
-          <div class="flex gap-3 mt-4 overflow-x-auto">
+          <div class="flex space-x-2 mt-4 overflow-x-auto py-2">
             <img
               v-for="(img, i) in product.imageURL"
               :key="i"
               :src="img"
               @click="activeImage = img"
               :class="[
-                'w-20 h-20 object-cover rounded-xl cursor-pointer transition-all',
-                activeImage === img ? 'ring-2 ring-black scale-105' : 'opacity-70 hover:opacity-100'
+                'rounded-xl cursor-pointer transition-all w-20 h-20',
+                activeImage === img ? 'scale-105' : 'opacity-70 hover:opacity-100'
               ]"
             />
           </div>
@@ -68,11 +55,8 @@
             <h1 class="text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-2 tracking-tight">
               {{ displayName }}
             </h1>
-            <p class="text-gray-500 text-sm mb-4 capitalize">
-              {{ product.categories?.[0] || product.categories?.[0] || "Uncategorized" }}
-            </p>
 
-            <p class="text-2xl font-semibold text-green-600 mb-6">
+            <p class="text-2xl font-semibold text-blue-600 mb-6">
               {{ formatPrice(product.price) }}
             </p>
 
@@ -146,7 +130,7 @@ function goBack() {
 }
 
 useHead(() => ({
-  title: `${displayName.value} | Sabilajati Jepara`,
+  title: `${displayName.value} | Sabilajati Mebel Jepara`,
   meta: [
     { name: 'description', content: displayDesc.value.slice(0, 150) },
     { property: 'og:title', content: displayName.value },

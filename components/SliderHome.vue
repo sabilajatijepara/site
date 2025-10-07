@@ -17,9 +17,9 @@
             <div class="text-white px-8 md:px-20 container mx-auto">
               <h2 class="text-4xl md:text-6xl font-bold mb-4">{{ $t(slide.title) }}</h2>
               <p class="mb-6 text-lg">{{ $t(slide.description) }}</p>
-              <button class="bg-white text-black px-4 py-2 rounded-full hover:bg-gray-200 transition">
+              <!--<button class="bg-white text-black px-4 py-2 rounded-full hover:bg-gray-200 transition">
                 {{ $t(slide.buttonText) }}
-              </button>
+              </button>-->
             </div>
           </div>
         </div>

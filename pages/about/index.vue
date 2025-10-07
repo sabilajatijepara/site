@@ -59,6 +59,58 @@
       />
     </section>
     
+    <div class="py-4"></div>
+    <section class="py-8">
+      <div class="mx-auto px-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center" data-aos="fade-up">
+          <div class="space-y-2">
+            <div class="flex justify-center font-bold">
+              <div class="text-6xl">
+                10K
+              </div>
+              <div class="text-3xl">+</div>
+            </div>
+            <div class="text-sm text-gray-600">
+              Products Delivered with dedication to quality and timeless design.
+            </div>
+          </div>
+          <div class="space-y-2">
+            <div class="flex justify-center font-bold">
+              <div class="text-6xl">
+                10
+              </div>
+              <div class="text-3xl">+</div>
+            </div>
+            <div class="text-sm text-gray-600">
+              Projects Completed with precision, passion, and purpose.
+            </div>
+          </div>
+          <div class="space-y-2">
+            <div class="flex justify-center font-bold">
+              <div class="text-6xl">
+                300
+              </div>
+              <div class="text-3xl">+</div>
+            </div>
+            <div class="text-sm text-gray-600">
+              Satisfied Clients who trust us to bring their visions to life.
+            </div>
+          </div>
+          <div class="space-y-2">
+            <div class="flex justify-center font-bold">
+              <div class="text-6xl">
+                5
+              </div>
+              <div class="text-3xl">+</div>
+            </div>
+            <div class="text-sm text-gray-600">
+              Years of Experience that build trust and lasting partnerships.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
     <!-- The Soul of Jepara -->
     <section class="py-16 px-6 md:px-20 grid md:grid-cols-2 gap-12 items-center" data-theme="light">
       <div data-aos="fade-up">
@@ -161,6 +213,7 @@
     </section>
     
     </div>
+    <div class="py-8"></div>
     <div>
       <Footer />
     </div>
