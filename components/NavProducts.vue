@@ -11,10 +11,10 @@
       <nav class="hidden md:flex items-center space-x-6 bg-gray-100 rounded-3xl px-6 py-2">
         <!-- Breadcrumb / Categories -->
         <NuxtLinkLocale to="/" class="hover:opacity-70">{{ $t('Home') }}</NuxtLinkLocale>
-        <NuxtLinkLocale to="/about" class="hover:opacity-70" @click="toggleMenu">
+        <NuxtLinkLocale to="/about" class="hover:opacity-70">
             {{ $t('About') }}
           </NuxtLinkLocale>
-          <NuxtLinkLocale to="/projects" class="hover:opacity-70" @click="toggleMenu">
+          <NuxtLinkLocale to="/projects" class="hover:opacity-70">
             {{ $t('Projects') }}
           </NuxtLinkLocale>
       </nav>
