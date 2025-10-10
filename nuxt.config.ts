@@ -11,6 +11,10 @@ export default defineNuxtConfig({
     'nuxt-aos',
   ],
   
+  routeRules: {
+    '/categories': { redirect: '/products' },
+  },
+  
   tailwindcss: {
     cssPath: "~/assets/css/main.css",
   },
