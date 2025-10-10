@@ -215,6 +215,9 @@
     </div>
     <div class="py-8"></div>
     <div>
+      <div class="text-center font-bold text-7xl md:text-9xl -mb-3">
+        SABILAJATI
+      </div>
       <Footer />
     </div>
   </template>

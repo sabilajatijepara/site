@@ -18,7 +18,7 @@
       </div>
       <div class="py-3"></div>
       <div data-aos="fade-up">
-        <NuxtLinkLocale
+        <NuxtLinkLocale to="/products"
           class="text-base lg:text-xl bg-gradient-to-r from-blue-500 to-blue-800 px-3 py-2 lg:px-6 lg:py-4 rounded-full text-white hover:from-blue-800 hover:to-blue-500 transition hover:shadow-lg hover:shadow-blue-400"
         >
           See Product Catalog
