@@ -311,7 +311,7 @@ useHead({
         title: "Sabilajati Mebel Jepara", // Title halaman
         meta: [
           { name: "description", content: "We are a manufacturer of school desks and chairs, cafe tables and chairs, as well as gazebos" },
-          { name: "keywords", content: "Mebel jepara, meubel jepara, kursi meja cafe, meja kursi sekolah, jasa pembuatan gazebo, jasa pembuatan bungalow, furniture custom" }, // Meta keywords
+          { name: "keywords", content: "Mebel jepara, meubel jepara, cafe furniture, dining furniture, restaurant furniture, meja kursi sekolah, jasa pembuatan gazebo, jasa pembuatan bungalow, furniture custom" }, // Meta keywords
           { property: "og:title", content: "Sabilajati Mebel Jepara" }, // Open Graph Title
           { property: "og:description", content: "We are a manufacturer of school desks and chairs, cafe tables and chairs, as well as gazebos" }, // Open
           { property: "og:image", content: "https://res.cloudinary.com/doninmxbl/image/upload/kquaxae4iakjge8rlve6.png" }, 
@@ -331,10 +331,10 @@ useHead({
         "name": "Sabilajati Mebel Jepara",
         "url": "https://sabilajati.co.id",
         "logo": "https://res.cloudinary.com/doninmxbl/image/upload/kquaxae4iakjge8rlve6.png",
-        "description": "Kami adalah produsen meja kursi sekolah, meja kursi cafe, serta gazebo dan bungalow.",
+        "description": "We are a manufacturer of school desks and chairs, cafe tables and chairs, as well as gazebos.",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "Jl. Raya Jepara - Bangsri KM 6",
+          "streetAddress": "Jl. Raya Jepara - Bangsri KM 7",
           "addressLocality": "Jepara",
           "addressRegion": "Jawa Tengah",
           "postalCode": "59452",
