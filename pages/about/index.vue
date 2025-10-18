@@ -222,5 +222,122 @@
     </div>
   </template>
 <script setup>
+// SEO
+useHead({
+  title: "About Us - Sabilajati Mebel Jepara",
+  meta: [
+    {
+      name: "description",
+      content:
+        "We are a manufacturer of school desks and chairs, cafe tables and chairs, as well as gazebos.",
+    },
+    {
+      name: "keywords",
+      content:
+        "Mebel jepara, meubel jepara, kursi meja cafe, meja kursi sekolah, jasa pembuatan gazebo, jasa pembuatan bungalow, furniture custom",
+    },
+    { property: "og:type", content: "website" },
+    { property: "og:title", content: "About Us - Sabilajati Mebel Jepara" },
+    {
+      property: "og:description",
+      content:
+        "We are a manufacturer of school desks and chairs, cafe tables and chairs, as well as gazebos.",
+    },
+    {
+      property: "og:image",
+      content:
+        "https://res.cloudinary.com/doninmxbl/image/upload/kquaxae4iakjge8rlve6.png",
+    },
+    { property: "og:url", content: "https://sabilajati.co.id/about" },
+    { name: "twitter:card", content: "summary_large_image" },
+  ],
+  link: [
+    {
+      rel: "canonical",
+      href: "https://sabilajati.co.id/about",
+    },
+  ],
+  script: [
+    // === ORGANIZATION SCHEMA ===
+    {
+      type: "application/ld+json",
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Sabilajati Mebel Jepara",
+        "url": "https://sabilajati.co.id",
+        "logo":
+          "https://res.cloudinary.com/doninmxbl/image/upload/kquaxae4iakjge8rlve6.png",
+        "description":
+          "We are a manufacturer of school desks and chairs, cafe tables and chairs, as well as gazebos.",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Jl. Raya Jepara - Bangsri KM 7",
+          "addressLocality": "Jepara",
+          "addressRegion": "Jawa Tengah",
+          "postalCode": "59452",
+          "addressCountry": "ID",
+        },
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "telephone": "+62 852-2520-8256",
+            "contactType": "customer service",
+            "availableLanguage": ["Indonesian", "English"],
+          },
+        ],
+        "sameAs": [
+          "https://www.facebook.com/sabilajatimebeljepara",
+          "https://www.instagram.com/sabilajati_jepara",
+          "https://wa.me/6285225208256",
+        ],
+      }),
+    },
 
+    // === WEBPAGE SCHEMA ===
+    {
+      type: "application/ld+json",
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "About Us - Sabilajati Mebel Jepara",
+        "description":
+          "Learn more about Sabilajati Mebel Jepara — trusted manufacturer of school furniture, cafe tables, and custom gazebos from Jepara.",
+        "url": "https://sabilajati.co.id/about",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Sabilajati Mebel Jepara",
+          "logo": {
+            "@type": "ImageObject",
+            "url":
+              "https://res.cloudinary.com/doninmxbl/image/upload/kquaxae4iakjge8rlve6.png",
+          },
+        },
+      }),
+    },
+
+    // === BREADCRUMB SCHEMA ===
+    {
+      type: "application/ld+json",
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://sabilajati.co.id",
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "About Us",
+            "item": "https://sabilajati.co.id/about",
+          },
+        ],
+      }),
+    },
+  ],
+});
 </script>

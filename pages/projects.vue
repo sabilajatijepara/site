@@ -127,50 +127,120 @@ onBeforeUnmount(() => {
 
 // SEO
 useHead({
-        title: "Projects - Sabilajati Mebel Jepara", // Title halaman
-        meta: [
-          { name: "description", content: "We are a manufacturer of school desks and chairs, cafe tables and chairs, as well as gazebos" },
-          { name: "keywords", content: "Mebel jepara, meubel jepara, kursi meja cafe, meja kursi sekolah, jasa pembuatan gazebo, jasa pembuatan bungalow, furniture custom" }, // Meta keywords
-          { property: "og:title", content: "Projects - Sabilajati Mebel Jepara" }, // Open Graph Title
-          { property: "og:description", content: "We are a manufacturer of school desks and chairs, cafe tables and chairs, as well as gazebos" }, // Open
-          { property: "og:image", content: "https://res.cloudinary.com/doninmxbl/image/upload/kquaxae4iakjge8rlve6.png" }, 
-        ],
-        link: [
-          {
-          rel: 'canonical',
-          href: 'https://sabilajati.co.id'
-          },
-        ],
-    script: [
+  title: "Projects - Sabilajati Mebel Jepara",
+  meta: [
     {
-      type: 'application/ld+json',
+      name: "description",
+      content:
+        "Explore the premium projects crafted by Sabilajati Mebel Jepara, from school desks to cafe tables, showcasing our expertise in furniture making.",
+    },
+    {
+      name: "keywords",
+      content:
+        "Mebel Jepara, meubel Jepara, furniture projects, school desks, cafe furniture, custom furniture, woodworking Jepara",
+    },
+    { property: "og:type", content: "website" },
+    { property: "og:title", content: "Projects - Sabilajati Mebel Jepara" },
+    {
+      property: "og:description",
+      content:
+        "Discover our featured furniture projects crafted with precision and quality in Jepara.",
+    },
+    {
+      property: "og:image",
+      content:
+        "https://res.cloudinary.com/doninmxbl/image/upload/kquaxae4iakjge8rlve6.png",
+    },
+    { property: "og:url", content: "https://sabilajati.co.id/projects" },
+    { name: "twitter:card", content: "summary_large_image" },
+  ],
+  link: [
+    {
+      rel: "canonical",
+      href: "https://sabilajati.co.id/projects",
+    },
+  ],
+  script: [
+    // ORGANIZATION SCHEMA
+    {
+      type: "application/ld+json",
       children: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "Sabilajati Mebel Jepara",
         "url": "https://sabilajati.co.id",
-        "logo": "https://res.cloudinary.com/doninmxbl/image/upload/kquaxae4iakjge8rlve6.png",
-        "description": "We are a manufacturer of school desks and chairs, cafe tables and chairs, as well as gazebos.",
+        "logo":
+          "https://res.cloudinary.com/doninmxbl/image/upload/kquaxae4iakjge8rlve6.png",
+        "description":
+          "We are a manufacturer of school desks and chairs, cafe tables and chairs, as well as gazebos.",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Jl. Raya Jepara - Bangsri KM 7",
           "addressLocality": "Jepara",
           "addressRegion": "Jawa Tengah",
           "postalCode": "59452",
-          "addressCountry": "ID"
+          "addressCountry": "ID",
         },
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "telephone": "+62 852-2520-8256",
-          "contactType": "customer service"
-        },
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "telephone": "+62 852-2520-8256",
+            "contactType": "customer service",
+            "availableLanguage": ["Indonesian", "English"],
+          },
+        ],
         "sameAs": [
           "https://www.facebook.com/sabilajatimebeljepara",
           "https://www.instagram.com/sabilajati_jepara",
-          "https://wa.me/6285225208256"
-        ]
-      })
-    }
-  ]
+          "https://wa.me/6285225208256",
+        ],
+      }),
+    },
+
+    // WEBPAGE SCHEMA
+    {
+      type: "application/ld+json",
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Projects - Sabilajati Mebel Jepara",
+        "url": "https://sabilajati.co.id/projects",
+        "description":
+          "Showcasing our completed furniture projects, highlighting craftsmanship, durability, and design excellence.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Sabilajati Mebel Jepara",
+          "logo": {
+            "@type": "ImageObject",
+            "url":
+              "https://res.cloudinary.com/doninmxbl/image/upload/kquaxae4iakjge8rlve6.png",
+          },
+        },
+      }),
+    },
+
+    // BREADCRUMB SCHEMA
+    {
+      type: "application/ld+json",
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://sabilajati.co.id",
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Projects",
+            "item": "https://sabilajati.co.id/projects",
+          },
+        ],
+      }),
+    },
+  ],
 });
 </script>

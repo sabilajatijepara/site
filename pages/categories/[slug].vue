@@ -271,4 +271,81 @@ const loadMore = async () => {
   currentPage.value++
   loadingMore.value = false
 }
+
+const category = computed(() => categories.find(c => c.link.endsWith(slug)))
+
+useHead(() => {
+  const baseUrl = 'https://sabilajati.co.id'
+  const currentUrl = `${baseUrl}/categories/${slug}`
+
+  return {
+    title: category.value
+      ? `${category.value.name} — Sabila Jati Furniture`
+      : 'Furniture Collections — Sabila Jati',
+    meta: [
+      {
+        name: 'description',
+        content: category.value
+          ? category.value.desc
+          : 'Explore our collection of stylish and durable furniture for every space.',
+      },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:title', content: category.value ? category.value.name : 'Furniture Collections' },
+      { property: 'og:description', content: category.value ? category.value.desc : 'Premium furniture crafted for every lifestyle.' },
+      { property: 'og:image', content: category.value?.image },
+      { property: 'og:url', content: currentUrl },
+      { name: 'twitter:card', content: 'summary_large_image' },
+    ],
+    link: [{ rel: 'canonical', href: currentUrl }],
+    script: [
+      {
+        type: 'application/ld+json',
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": baseUrl
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": category.value?.name || "Furniture Category",
+              "item": currentUrl
+            }
+          ]
+        })
+      },
+      {
+        type: 'application/ld+json',
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          "name": category.value?.name || "Furniture Collections",
+          "description": category.value?.desc || "Explore our selection of handcrafted furniture.",
+          "url": currentUrl,
+          "mainEntity": {
+            "@type": "ItemList",
+            "itemListElement": allProducts.value.slice(0, 12).map((item, index) => ({
+              "@type": "Product",
+              "position": index + 1,
+              "name": item.name,
+              "image": item.image,
+              "url": `${baseUrl}${item.link}`,
+              "offers": {
+                "@type": "Offer",
+                "priceCurrency": "IDR",
+                "price": item.price || "0",
+                "availability": "https://schema.org/InStock"
+              }
+            }))
+          }
+        })
+      }
+    ]
+  }
+})
 </script>

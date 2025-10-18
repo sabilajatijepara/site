@@ -24,6 +24,7 @@
             <img
               :src="activeImage"
               :alt="displayName"
+              loading="lazy"
               class="w-full h-[320px] md:h-[480px] object-cover transition-all duration-700 hover:scale-[1.02]"
             />
           </div>
@@ -32,6 +33,7 @@
               v-for="(img, i) in product.imageURL"
               :key="i"
               :src="img"
+              loading="lazy"
               @click="activeImage = img"
               :class="[
                 'rounded-xl cursor-pointer transition-all w-20 h-20',
@@ -129,7 +131,7 @@ function goBack() {
   }
 }
 
-useHead(() => ({
+/** useHead(() => ({
   title: `${displayName.value} | Sabilajati Mebel Jepara`,
   meta: [
     { name: 'description', content: displayDesc.value.slice(0, 150) },
@@ -137,5 +139,51 @@ useHead(() => ({
     { property: 'og:description', content: displayDesc.value.slice(0, 150) },
     { property: 'og:image', content: activeImage.value }
   ]
+})) **/
+
+// SEO
+useHead(() => ({
+  title: `${displayName.value} - Sabilajati Mebel Jepara`,
+  meta: [
+    { name: "description", content: displayDesc.value.slice(0, 150) },
+    {
+      name: "keywords",
+      content:
+        displayName.value.split(" ").join(", ") +
+        ", Mebel jepara, meubel jepara, kursi meja cafe, meja kursi sekolah, jasa pembuatan gazebo, jasa pembuatan bungalow, furniture custom",
+    },
+    { property: "og:title", content: `${displayName.value} - Sabilajati Mebel Jepara` },
+    { property: "og:description", content: displayDesc.value.slice(0, 150) },
+    { property: "og:image", content: activeImage.value },
+  ],
+  link: [
+    {
+      rel: "canonical",
+      href: `https://sabilajati.co.id/products/${slugEn}`,
+    },
+  ],
+  script: [
+    {
+      type: "application/ld+json",
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": displayName.value,
+        "image": activeImage.value,
+        "description": displayDesc.value.slice(0, 150),
+        "brand": {
+          "@type": "Brand",
+          "name": "Sabilajati Mebel Jepara",
+        },
+        "url": `https://sabilajati.co.id/products/${slugEn}`,
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "IDR",
+          "price": product.value.price || "0",
+          "availability": "https://schema.org/InStock",
+        },
+      }),
+    },
+  ],
 }))
 </script>
