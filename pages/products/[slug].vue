@@ -22,7 +22,7 @@
         <div v-else class="flex flex-col">
           <div class="w-full overflow-hidden rounded-2xl shadow-lg bg-white">
             <img
-              :src="activeImage"
+              :src="toWebP(activeImage, 480, 480)"
               :alt="displayName"
               loading="lazy"
               class="w-full h-[320px] md:h-[480px] object-cover transition-all duration-700 hover:scale-[1.02]"
@@ -32,8 +32,9 @@
             <img
               v-for="(img, i) in product.imageURL"
               :key="i"
-              :src="img"
+              :src="toWebP(img, 480, 480)"
               loading="lazy"
+              :alt="displayName"
               @click="activeImage = img"
               :class="[
                 'rounded-xl cursor-pointer transition-all w-20 h-20',
@@ -71,12 +72,12 @@
             <a
               :href="whatsappLink"
               target="_blank"
-              class="inline-block bg-green-600 text-white text-lg font-semibold py-3 px-6 rounded-2xl hover:bg-green-700 transition-all w-full md:w-auto text-center shadow-md hover:shadow-lg"
+              class="inline-block bg-green-700 hover:bg-green-600 text-white text-lg font-semibold py-3 px-6 rounded-2xl transition-all w-full md:w-auto text-center shadow-md hover:shadow-lg"
             >
               <Icon name="mdi:whatsapp" /> Order via WhatsApp
             </a>
-            <button @click="goBack" class="inline-block bg-gray-200 text-gray-800 text-lg font-semibold py-3 px-6 rounded-2xl hover:bg-gray-300 transition-all w-full md:w-auto text-center shadow-sm hover:shadow-md">
-              ← Go Back
+            <button @click="goBack" class="inline-block border border-black text-gray-800 text-lg font-semibold py-3 px-6 rounded-2xl hover:bg-gray-300 transition-all w-full md:w-auto text-center shadow-sm hover:shadow-md">
+              Go Back
             </button>
           </div>
         </div>
@@ -115,6 +116,22 @@ const displayDesc = computed(() => product.value?.desc_en || product.value?.desc
 const formatPrice = (price) => {
   if (!price || price === 0) return 'Price: Contact Admin'
   return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(price)
+}
+
+function toWebP(url, width = null, height = null) {
+  if (!url) return ''
+  
+  let newUrl = url.replace('/upload/', '/upload/f_webp/')
+  
+  if (width || height) {
+    let sizeStr = []
+    if (width) sizeStr.push(`w_${width}`)
+    if (height) sizeStr.push(`h_${height}`)
+    sizeStr.push('c_fill')
+    newUrl = newUrl.replace('/upload/', `/upload/${sizeStr.join(',')}/`)
+  }
+
+  return newUrl
 }
 
 const whatsappLink = computed(() => {
