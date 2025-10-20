@@ -13,7 +13,7 @@ const { data: blogPosts, error, pending: isLoading } = await useFetch('https://a
         :key="post.id"
         class="bg-white rounded-xl shadow hover:shadow-xl transition overflow-hidden border"
       >
-        <img :src="post.thumbnail" alt="Thumbnail" class="w-full h-48 object-cover" />
+        <img :src="post.thumbnail" :alt="post.title" loading="lazy" class="w-full h-48 object-cover" />
         <div class="p-4 flex flex-col h-full">
           <h2 class="text-lg font-semibold mb-1">{{ post.title }}</h2>
           <p class="text-sm text-gray-500 mb-2">{{ formatDate(post.published) }}</p>

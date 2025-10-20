@@ -31,6 +31,7 @@
                 v-if="client.logo"
                 :src="client.logo"
                 :alt="client.name"
+                loading="lazy"
                 class="h-full object-contain object-contain max-h-20 max-w-full grayscale hover:grayscale-0 transition duration-300"
                 />
                 <!-- Jika tidak ada logo, tampilkan teks -->

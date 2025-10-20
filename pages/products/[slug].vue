@@ -24,7 +24,6 @@
             <img
               :src="toWebP(activeImage, 480, 480)"
               :alt="displayName"
-              loading="lazy"
               class="w-full h-[320px] md:h-[480px] object-cover transition-all duration-700 hover:scale-[1.02]"
             />
           </div>

@@ -20,12 +20,12 @@
       </nav>
 
       <!-- Desktop CTA & Search -->
-      <div class="hidden md:flex items-center space-x-4">
-        <!-- Search Icon -->
+      <!--<div class="hidden md:flex items-center space-x-4">
+        
         <button class="p-2 text-gray-600 hover:text-black">
           <Icon name="ci:search"/>
         </button>
-      </div>
+      </div>-->
 
       <!-- Mobile Menu Button -->
       <div class="md:hidden">

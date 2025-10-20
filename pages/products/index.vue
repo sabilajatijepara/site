@@ -13,7 +13,7 @@
         </div>
         <div>
           <div class="text-sm">
-            Discover our stylish and Durable Fumiture Dotection designed to olevate your space with niegance and latning quality Perfect for any room, these pieces biend modern design with exceptional functionality and comfort.
+            Discover our stylish and Durable Furniture Protection, designed to elevate your space with elegance and lasting quality. Perfect for any room, these pieces blend modern design with exceptional functionality and comfort.
           </div>
         </div>
       </div>
