@@ -14,6 +14,7 @@
       <img
         :src="item.image"
         :alt="item.name"
+        loading="lazy"
         class="absolute inset-0 w-full h-full object-cover transition duration-300"
       />
 

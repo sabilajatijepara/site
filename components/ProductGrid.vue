@@ -14,8 +14,9 @@
     >
       <!-- Background image -->
       <img
-        :src="item.image"
+        :src="toWebP(item.image, 480, 480)"
         :alt="item.name"
+        loading="lazy"
         class="absolute inset-0 w-full h-full object-cover transition duration-300"
       />
 
@@ -73,4 +74,20 @@ const products = computed(() =>
     price: item.price
   }))
 )
+
+function toWebP(url, width = null, height = null) {
+  if (!url) return ''
+  
+  let newUrl = url.replace('/upload/', '/upload/f_webp/')
+  
+  if (width || height) {
+    let sizeStr = []
+    if (width) sizeStr.push(`w_${width}`)
+    if (height) sizeStr.push(`h_${height}`)
+    sizeStr.push('c_fill')
+    newUrl = newUrl.replace('/upload/', `/upload/${sizeStr.join(',')}/`)
+  }
+
+  return newUrl
+}
 </script>
