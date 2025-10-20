@@ -96,7 +96,7 @@
           </NuxtLinkLocale>
           <NuxtLinkLocale to="/blog" class="hover:opacity-70 text-2xl" @click="toggleMenu">Blog</NuxtLinkLocale>
           <NuxtLinkLocale to="/contacts" class="hover:opacity-70 text-2xl" @click="toggleMenu">Contact</NuxtLinkLocale>
-          <hr class="h-px my-8 bg-gray-200 border-0">
+          <!--<hr class="h-px my-8 bg-gray-200 border-0">
           <div class="pt-8" :class="isDark ? 'text-white' : 'text-black'">
             <p class="mb-2 font-bold">Language</p>
             <div class="text-sm space-x-4">
@@ -104,7 +104,7 @@
               <span>|</span>
               <NuxtLink to="/id">INDONESIA</NuxtLink>
             </div>
-          </div>
+          </div>-->
         </div>
       </div>
     </transition>

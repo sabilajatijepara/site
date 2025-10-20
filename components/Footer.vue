@@ -5,7 +5,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 px-6 md:px-16 md:py-12 py-6 gap-4 md:gap-8">
         <div class="text-white">
           <div class="">
-            <img src="https://res.cloudinary.com/dwn4gzaqp/image/upload/v1759737993/Logo_White_1_dbjdtr.webp" class="w-20 h-20" alt="Logo Sabilajati"/>
+            <img src="https://res.cloudinary.com/dwn4gzaqp/image/upload/v1759737993/Logo_White_1_dbjdtr.webp" class="w-20 h-20" width="480" height="480" alt="Logo Sabilajati"/>
           </div>
           <div class="py-2"></div>
           <div class="text-sm">

@@ -73,7 +73,7 @@
               target="_blank"
               class="inline-block bg-green-600 text-white text-lg font-semibold py-3 px-6 rounded-2xl hover:bg-green-700 transition-all w-full md:w-auto text-center shadow-md hover:shadow-lg"
             >
-              💬 Order via WhatsApp
+              <Icon name="mdi:whatsapp" /> Order via WhatsApp
             </a>
             <button @click="goBack" class="inline-block bg-gray-200 text-gray-800 text-lg font-semibold py-3 px-6 rounded-2xl hover:bg-gray-300 transition-all w-full md:w-auto text-center shadow-sm hover:shadow-md">
               ← Go Back

@@ -87,7 +87,7 @@
           <!-- 📸 Product Image -->
           <div class="w-full aspect-square overflow-hidden relative">
             <img
-              :src="item.image"
+              :src="toWebP(item.image, 480, 480)"
               :alt="item.name"
               class="absolute inset-0 w-full h-full object-cover transition duration-300 group-hover:scale-105"
             />
@@ -159,7 +159,7 @@
       <a
         href="https://wa.me/6281234567890"
         target="_blank"
-        class="inline-flex items-center gap-2 px-8 py-3 bg-green-500 text-white font-semibold rounded-lg hover:bg-green-400 transition md:mb-2"
+        class="inline-flex items-center gap-2 px-8 py-3 bg-green-700 text-white font-semibold rounded-lg hover:bg-green-600 transition md:mb-2"
       >
         <Icon name="mdi:whatsapp" size="1.5em" />
         Contact Us
@@ -240,6 +240,22 @@ const allProducts = computed(() =>
     price: item.price
   }))
 )
+
+function toWebP(url, width = null, height = null) {
+  if (!url) return ''
+  
+  let newUrl = url.replace('/upload/', '/upload/f_webp/')
+  
+  if (width || height) {
+    let sizeStr = []
+    if (width) sizeStr.push(`w_${width}`)
+    if (height) sizeStr.push(`h_${height}`)
+    sizeStr.push('c_fill')
+    newUrl = newUrl.replace('/upload/', `/upload/${sizeStr.join(',')}/`)
+  }
+
+  return newUrl
+}
 
 // Produk yang sedang ditampilkan (pagination)
 const products = computed(() => {

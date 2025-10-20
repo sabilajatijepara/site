@@ -215,7 +215,7 @@
         >
           <div class="">
             <img
-              src="https://res.cloudinary.com/dwn4gzaqp/image/upload/v1752987426/Newsletters_1_zmhue8.png"
+              src="https://res.cloudinary.com/dwn4gzaqp/image/upload/v1752987426/Newsletters_1_zmhue8.webp"
               alt=""
               srcset=""
             />

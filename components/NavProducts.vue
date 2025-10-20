@@ -69,11 +69,11 @@
            class="bg-green-700 text-black px-4 py-5 h-10 flex items-center justify-center font-medium mb-4 text-white rounded-full">
           Order via WhatsApp
         </a>
-        <div class="flex space-x-4 text-sm">
+        <!--<div class="flex space-x-4 text-sm">
           <NuxtLink to="/">ENGLISH</NuxtLink>
           <span>|</span>
           <NuxtLink to="/id">INDONESIA</NuxtLink>
-        </div>
+        </div>-->
       </div>
     </div>
   </transition>
