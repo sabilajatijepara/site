@@ -134,7 +134,7 @@ function toWebP(url, width = null, height = null) {
 }
 
 const whatsappLink = computed(() => {
-  const phone = '6281234567890'
+  const phone = '6282242645601'
   const text = `Hello, I'm interested in the product: ${displayName.value}`
   return `https://wa.me/${phone}?text=${encodeURIComponent(text)}`
 })
@@ -157,49 +157,52 @@ function goBack() {
   ]
 })) **/
 
-// SEO
+const { data: seoProduct } = await useFetch(`https://api.sabilajati.com/products/en/${slugEn}`)
+
+const seoName = computed(() => seoProduct.value?.name_en || seoProduct.value?.name || '')
+const seoDesc = computed(() => seoProduct.value?.desc_en || seoProduct.value?.description || '')
+const seoImage = computed(() => seoProduct.value?.imageURL?.[0]?.replace('/upload/', '/upload/f_auto,q_auto/') 
+                               || 'https://res.cloudinary.com/doninmxbl/image/upload/default.webp')
+
+// ===========================
+// SEO HEAD
+// ===========================
 useHead(() => ({
-  title: `${displayName.value} - Sabilajati Mebel Jepara`,
+  title: seoName.value ? `${seoName.value} - Sabilajati Mebel Jepara` : 'Loading... | Sabilajati Mebel Jepara',
   meta: [
-    { name: "description", content: displayDesc.value.slice(0, 150) },
-    {
-      name: "keywords",
-      content:
-        displayName.value.split(" ").join(", ") +
-        ", Mebel jepara, meubel jepara, kursi meja cafe, meja kursi sekolah, jasa pembuatan gazebo, jasa pembuatan bungalow, furniture custom",
-    },
-    { property: "og:title", content: `${displayName.value} - Sabilajati Mebel Jepara` },
-    { property: "og:description", content: displayDesc.value.slice(0, 150) },
-    { property: "og:image", content: activeImage.value },
+    { name: 'description', content: seoDesc.value.slice(0, 150) || 'Sabilajati Mebel Jepara' },
+    { name: 'keywords', content: seoName.value ? `${seoName.value}, Mebel jepara, furniture custom` : 'Mebel Jepara, Furniture' },
+    { property: 'og:title', content: seoName.value },
+    { property: 'og:description', content: seoDesc.value.slice(0, 150) },
+    { property: 'og:image', content: seoImage.value },
+    { property: 'og:url', content: `https://sabilajati.co.id/products/${slugEn}` },
+    { name: 'twitter:card', content: 'summary_large_image' },
+    { name: 'twitter:title', content: seoName.value },
+    { name: 'twitter:description', content: seoDesc.value.slice(0, 150) },
+    { name: 'twitter:image', content: seoImage.value },
   ],
   link: [
-    {
-      rel: "canonical",
-      href: `https://sabilajati.co.id/products/${slugEn}`,
-    },
+    { rel: 'canonical', href: `https://sabilajati.co.id/products/${slugEn}` }
   ],
   script: [
     {
-      type: "application/ld+json",
+      type: 'application/ld+json',
       children: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "Product",
-        "name": displayName.value,
-        "image": activeImage.value,
-        "description": displayDesc.value.slice(0, 150),
-        "brand": {
-          "@type": "Brand",
-          "name": "Sabilajati Mebel Jepara",
-        },
-        "url": `https://sabilajati.co.id/products/${slugEn}`,
-        "offers": {
+        name: seoName.value,
+        image: seoImage.value,
+        description: seoDesc.value.slice(0, 150),
+        brand: { "@type": "Brand", name: "Sabilajati Mebel Jepara" },
+        url: `https://sabilajati.co.id/products/${slugEn}`,
+        offers: {
           "@type": "Offer",
-          "priceCurrency": "IDR",
-          "price": product.value.price || "0",
-          "availability": "https://schema.org/InStock",
-        },
-      }),
-    },
-  ],
+          priceCurrency: "IDR",
+          price: seoProduct.value?.price || "0",
+          availability: "https://schema.org/InStock"
+        }
+      })
+    }
+  ]
 }))
 </script>
