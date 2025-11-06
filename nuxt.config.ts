@@ -9,10 +9,18 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@nuxtjs/i18n',
     'nuxt-aos',
+    '@nuxtjs/seo',
   ],
   
   routeRules: {
     '/categories': { redirect: '/products' },
+  },
+  
+  robots: {
+        // Your robots.txt configuration
+        UserAgent: '*',
+        Disallow: "",
+      //Sitemap: 'https://yourwebsite.com/sitemap.xml' // Link to your sitemap
   },
   
   tailwindcss: {
