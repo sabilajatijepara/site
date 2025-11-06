@@ -5,7 +5,7 @@
       <NavProducts />
     </div>
     
-    <div class="py-4"></div>
+    <div class="py-8"></div>
 
     <!-- ===== PRODUCT DETAIL MAIN ===== -->
     <main class="flex-grow py-10 px-4 md:px-10">
@@ -20,14 +20,14 @@
         </div>
 
         <div v-else class="flex flex-col">
-          <div class="w-full overflow-hidden rounded-2xl shadow-lg bg-white">
+          <div class="w-full overflow-hidden rounded-2xl bg-white">
             <img
               :src="toWebP(activeImage, 480, 480)"
               :alt="displayName"
               class="w-full h-[320px] md:h-[480px] object-cover transition-all duration-700 hover:scale-[1.02]"
             />
           </div>
-          <div class="flex space-x-2 mt-4 overflow-x-auto py-2">
+          <div class="flex space-x-2 mt-4 overflow-x-auto py-2 px-4">
             <img
               v-for="(img, i) in product.imageURL"
               :key="i"
@@ -36,8 +36,8 @@
               :alt="displayName"
               @click="activeImage = img"
               :class="[
-                'rounded-xl cursor-pointer transition-all w-20 h-20',
-                activeImage === img ? 'scale-105' : 'opacity-70 hover:opacity-100'
+                'rounded-xl cursor-pointer transition-all w-20 h-20 border border-black',
+                activeImage === img ? 'scale-105' : 'grayscale opacity-70 hover:opacity-100'
               ]"
             />
           </div>
@@ -113,7 +113,7 @@ const displayName = computed(() => product.value?.name_en || product.value?.name
 const displayDesc = computed(() => product.value?.desc_en || product.value?.description || '')
 
 const formatPrice = (price) => {
-  if (!price || price === 0) return 'Price: Contact Admin'
+  if (!price || price === 0) return 'Price: Contact us'
   return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(price)
 }
 
@@ -135,7 +135,8 @@ function toWebP(url, width = null, height = null) {
 
 const whatsappLink = computed(() => {
   const phone = '6282242645601'
-  const text = `Hello, I'm interested in the product: ${displayName.value}`
+  const productUrl = `https://sabilajati.co.id/products/${slugEn}?utm_source=whatsapp&utm_medium=chat&utm_campaign=product_inquiry`
+  const text = `Hi! I saw your product "${displayName.value}" on Sabilajati Mebel Jepara Website. Can you tell me more about it? \n\nHere’s the link: ${productUrl}`
   return `https://wa.me/${phone}?text=${encodeURIComponent(text)}`
 })
 
