@@ -73,7 +73,7 @@ useHead({
   link: [
     {
       rel: "canonical",
-      href: "https://sabilajati.co.id/contacts",
+      href: "https://sabilajati.com/contacts",
     },
   ],
   script: [
@@ -84,7 +84,7 @@ useHead({
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "Sabilajati Mebel Jepara",
-        "url": "https://sabilajati.co.id",
+        "url": "https://sabilajati.com",
         "logo":
           "https://res.cloudinary.com/doninmxbl/image/upload/kquaxae4iakjge8rlve6.png",
         "description":
@@ -120,7 +120,7 @@ useHead({
         "@context": "https://schema.org",
         "@type": "ContactPage",
         "name": "Contacts - Sabilajati Mebel Jepara",
-        "url": "https://sabilajati.co.id/contacts",
+        "url": "https://sabilajati.com/contacts",
         "description":
           "Reach out to Sabilajati Mebel Jepara for inquiries, orders, or customer support.",
         "publisher": {
@@ -146,13 +146,13 @@ useHead({
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://sabilajati.co.id",
+            "item": "https://sabilajati.com",
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Contacts",
-            "item": "https://sabilajati.co.id/contacts",
+            "item": "https://sabilajati.com/contacts",
           },
         ],
       }),

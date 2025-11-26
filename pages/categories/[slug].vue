@@ -291,7 +291,7 @@ const loadMore = async () => {
 const category = computed(() => categories.find(c => c.link.endsWith(slug)))
 
 useHead(() => {
-  const baseUrl = 'https://sabilajati.co.id'
+  const baseUrl = 'https://sabilajati.com'
   const currentUrl = `${baseUrl}/categories/${slug}`
 
   return {

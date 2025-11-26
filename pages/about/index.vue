@@ -265,7 +265,7 @@ useHead({
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "Sabilajati Mebel Jepara",
-        "url": "https://sabilajati.co.id",
+        "url": "https://sabilajati.com",
         "logo":
           "https://res.cloudinary.com/doninmxbl/image/upload/kquaxae4iakjge8rlve6.png",
         "description":
@@ -303,7 +303,7 @@ useHead({
         "name": "About Us - Sabilajati Mebel Jepara",
         "description":
           "Learn more about Sabilajati Mebel Jepara — trusted manufacturer of school furniture, cafe tables, and custom gazebos from Jepara.",
-        "url": "https://sabilajati.co.id/about",
+        "url": "https://sabilajati.com/about",
         "publisher": {
           "@type": "Organization",
           "name": "Sabilajati Mebel Jepara",
@@ -327,13 +327,13 @@ useHead({
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://sabilajati.co.id",
+            "item": "https://sabilajati.com",
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "About Us",
-            "item": "https://sabilajati.co.id/about",
+            "item": "https://sabilajati.com/about",
           },
         ],
       }),

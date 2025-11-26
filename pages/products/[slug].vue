@@ -134,8 +134,8 @@ function toWebP(url, width = null, height = null) {
 }
 
 const whatsappLink = computed(() => {
-  const phone = '6282242645601'
-  const productUrl = `https://sabilajati.co.id/products/${slugEn}?utm_source=whatsapp&utm_medium=chat&utm_campaign=product_inquiry`
+  const phone = '6285225208256'
+  const productUrl = `https://sabilajati.com/products/${slugEn}?utm_source=whatsapp&utm_medium=chat&utm_campaign=product_inquiry`
   const text = `Hi! I saw your product "${displayName.value}" on Sabilajati Mebel Jepara Website. Can you tell me more about it? \n\nHere’s the link: ${productUrl}`
   return `https://wa.me/${phone}?text=${encodeURIComponent(text)}`
 })
@@ -183,7 +183,7 @@ useHead(() => ({
     { name: 'twitter:image', content: seoImage.value },
   ],
   link: [
-    { rel: 'canonical', href: `https://sabilajati.co.id/products/${slugEn}` }
+    { rel: 'canonical', href: `https://sabilajati.com/products/${slugEn}` }
   ],
   script: [
     {
@@ -195,7 +195,7 @@ useHead(() => ({
         image: seoImage.value,
         description: seoDesc.value.slice(0, 150),
         brand: { "@type": "Brand", name: "Sabilajati Mebel Jepara" },
-        url: `https://sabilajati.co.id/products/${slugEn}`,
+        url: `https://sabilajati.com/products/${slugEn}`,
         offers: {
           "@type": "Offer",
           priceCurrency: "IDR",

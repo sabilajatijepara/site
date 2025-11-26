@@ -157,7 +157,7 @@ useHead({
   link: [
     {
       rel: "canonical",
-      href: "https://sabilajati.co.id/projects",
+      href: "https://sabilajati.com",
     },
   ],
   script: [
@@ -168,7 +168,7 @@ useHead({
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "Sabilajati Mebel Jepara",
-        "url": "https://sabilajati.co.id",
+        "url": "https://sabilajati.com",
         "logo":
           "https://res.cloudinary.com/doninmxbl/image/upload/kquaxae4iakjge8rlve6.png",
         "description":
@@ -204,7 +204,7 @@ useHead({
         "@context": "https://schema.org",
         "@type": "WebPage",
         "name": "Projects - Sabilajati Mebel Jepara",
-        "url": "https://sabilajati.co.id/projects",
+        "url": "https://sabilajati.com/projects",
         "description":
           "Showcasing our completed furniture projects, highlighting craftsmanship, durability, and design excellence.",
         "publisher": {
@@ -230,13 +230,13 @@ useHead({
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://sabilajati.co.id",
+            "item": "https://sabilajati.com",
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Projects",
-            "item": "https://sabilajati.co.id/projects",
+            "item": "https://sabilajati.com/projects",
           },
         ],
       }),

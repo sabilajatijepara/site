@@ -332,13 +332,13 @@ useHead({
       content:
         "https://res.cloudinary.com/doninmxbl/image/upload/kquaxae4iakjge8rlve6.png",
     },
-    { property: "og:url", content: "https://sabilajati.co.id" },
+    { property: "og:url", content: "https://sabilajati.com" },
     { name: "twitter:card", content: "summary_large_image" },
   ],
   link: [
     {
       rel: "canonical",
-      href: "https://sabilajati.co.id",
+      href: "https://sabilajati.com",
     },
   ],
   script: [
@@ -349,7 +349,7 @@ useHead({
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "Sabilajati Mebel Jepara",
-        "url": "https://sabilajati.co.id",
+        "url": "https://sabilajati.com",
         "logo":
           "https://res.cloudinary.com/doninmxbl/image/upload/kquaxae4iakjge8rlve6.png",
         "description":
@@ -385,7 +385,7 @@ useHead({
         "@context": "https://schema.org",
         "@type": "WebSite",
         "name": "Sabilajati Mebel Jepara",
-        "url": "https://sabilajati.co.id",
+        "url": "https://sabilajati.com",
       }),
     },
 
@@ -400,7 +400,7 @@ useHead({
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://sabilajati.co.id",
+            "item": "https://sabilajati.com",
           },
         ],
       }),

@@ -182,7 +182,7 @@ useHead({
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "Sabilajati Mebel Jepara",
-        "url": "https://sabilajati.co.id",
+        "url": "https://sabilajati.com",
         "logo":
           "https://res.cloudinary.com/doninmxbl/image/upload/kquaxae4iakjge8rlve6.png",
         "description":
@@ -218,7 +218,7 @@ useHead({
         "@context": "https://schema.org",
         "@type": "WebPage",
         "name": "How We Work - Sabilajati Mebel Jepara",
-        "url": "https://sabilajati.co.id/how-we-work",
+        "url": "https://sabilajati.com/how-we-work",
         "description":
           "Learn about how Sabilajati Mebel Jepara creates handmade, custom furniture through expert craftsmanship and sustainable materials.",
         "publisher": {
@@ -244,13 +244,13 @@ useHead({
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://sabilajati.co.id",
+            "item": "https://sabilajati.com",
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "How We Work",
-            "item": "https://sabilajati.co.id/how-we-work",
+            "item": "https://sabilajati.com/how-we-work",
           },
         ],
       }),
