@@ -166,6 +166,7 @@
       </a>
     </div>
   </section>
+  <FAB />
   <div class="py-8"></div>
   <FooProducts/>
 </template>

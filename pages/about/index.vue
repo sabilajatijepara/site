@@ -211,7 +211,7 @@
         </NuxtLink>
       </div>
     </section>
-    
+    <FAB />
     </div>
     <div class="py-8"></div>
     <div>

@@ -12,7 +12,7 @@
         <hr class="h-px my-4 bg-gray-100 border-0" />
         <div class="hover:text-white transition hover:bg-blue-600 w-full px-2 py-1 rounded-2xl">
           <NuxtLink
-            href="mailto:hello@perusahaan.com"
+            href="mailto:admin@sabilajati.com"
             class="flex items-center space-x-2"
           >
             <Icon name="heroicons:envelope" size="20" />
@@ -21,7 +21,7 @@
         </div>
         <div class="hover:text-white hover:bg-green-500 transition px-2 py-1 rounded-2xl w-full">
           <NuxtLink
-            href="https://wa.me/6281234567890"
+            href="https://wa.me/6285225208256"
             target="_blank"
             class="flex items-center space-x-2"
           >

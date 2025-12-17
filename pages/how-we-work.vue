@@ -132,6 +132,7 @@
     </section>
     </div>
   </section>
+  <FAB />
   <div class="py-4"></div>
   <div>
     <Footer />
