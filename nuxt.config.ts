@@ -10,6 +10,7 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     'nuxt-aos',
     '@nuxtjs/seo',
+    '@nuxtjs/sitemap',
   ],
   
   routeRules: {
@@ -49,5 +50,26 @@ export default defineNuxtConfig({
       // redirectOn: 'root', Mengarahkan ulang ke root berdasarkan bahasa
       redirecton: false,
     },*/
+  },
+  
+  sitemap: {
+    hostname: 'https://sabilajati.com', // GANTI domain asli
+    name: "Sabilajati",
+    gzip: true,
+    xslTips: false,
+    xslColumns: [
+      { label: 'URL', width: '50%' },
+      { label: 'Last Modified', select: 'sitemap:lastmod', width: '25%' },
+      { label: 'Priority', select: 'sitemap:priority', width: '12.5%' },
+      { label: 'Change Frequency', select: 'sitemap:changefreq', width: '12.5%' },
+    ],
+
+    sources: [
+      [
+        '/api/__sitemap__/urls', {
+        timeout: 10000
+      }
+      ]
+    ],
   },
 })
