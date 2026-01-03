@@ -56,10 +56,10 @@
         <NuxtLinkLocale to="/" class="hover:opacity-70 text-2xl" @click="toggleMenu">{{ $t('Home') }}</NuxtLinkLocale>
         <div class="text-gray-700 text-sm font-bold">CATEGORY</div>
         <div class="flex flex-col space-y-2 px-4 -mt-8 text-md">
-        <NuxtLinkLocale to="/products/home-living" class="hover:opacity-70" @click="toggleMenu">Home Living</NuxtLinkLocale>
-        <NuxtLinkLocale to="/products/cafe-resto" class="hover:opacity-70" @click="toggleMenu">Cafe & Resto</NuxtLinkLocale>
-        <NuxtLinkLocale to="/products/gazebo" class="hover:opacity-70" @click="toggleMenu">Structures</NuxtLinkLocale>
-        <NuxtLinkLocale to="/products/bungalows" class="hover:opacity-70" @click="toggleMenu">Institutions</NuxtLinkLocale>
+        <NuxtLinkLocale to="/categories/home-living" class="hover:opacity-70" @click="toggleMenu">Home Living</NuxtLinkLocale>
+        <NuxtLinkLocale to="/categories/cafe-resto" class="hover:opacity-70" @click="toggleMenu">Cafe & Resto</NuxtLinkLocale>
+        <NuxtLinkLocale to="/categories/gazebo" class="hover:opacity-70" @click="toggleMenu">Structures</NuxtLinkLocale>
+        <NuxtLinkLocale to="/categories/bungalows" class="hover:opacity-70" @click="toggleMenu">Institutions</NuxtLinkLocale>
         </div>
 
         <hr class="h-px my-4 bg-gray-200 border-0">
