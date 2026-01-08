@@ -112,6 +112,11 @@ watchEffect(() => {
   }
 })
 
+const seoImage = computed(() => {
+  if (!activeImage.value) return ''
+  return activeImage.value.replace('/upload/', '/upload/f_auto,q_auto/')
+})
+
 // =========================
 // MULTI LANGUAGE CONTENT
 // =========================
@@ -156,12 +161,45 @@ const canonicalUrl = computed(() =>
 useHead(() => ({
   title: `${displayName.value} - Sabilajati Mebel Jepara`,
   meta: [
-    { name: 'description', content: displayDesc.value?.slice(0, 150) }
+    { name: 'description', content: displayDesc.value?.slice(0, 150) },
+
+    // OG
+    { property: 'og:title', content: displayName.value },
+    { property: 'og:description', content: displayDesc.value?.slice(0, 150) },
+    { property: 'og:image', content: seoImage.value },
+    { property: 'og:type', content: 'product' },
+
+    // Twitter
+    { name: 'twitter:card', content: 'summary_large_image' },
+    { name: 'twitter:image', content: seoImage.value }
   ],
   link: [
     { rel: 'canonical', href: canonicalUrl.value },
     { rel: 'alternate', hreflang: 'id', href: `https://sabilajati.com/id/products/${product.value?.slug}` },
     { rel: 'alternate', hreflang: 'en', href: `https://sabilajati.com/products/${product.value?.slug_en}` }
+  ],
+  script: [
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Product",
+        name: displayName.value,
+        image: seoImage.value,
+        description: displayDesc.value?.slice(0, 150),
+        brand: {
+          "@type": "Brand",
+          name: "Sabilajati Mebel Jepara"
+        },
+        offers: {
+          "@type": "Offer",
+          priceCurrency: "IDR",
+          price: product.value?.price || "0",
+          availability: "https://schema.org/InStock",
+          url: canonicalUrl.value
+        }
+      })
+    }
   ]
 }))
 
@@ -170,9 +208,14 @@ useHead(() => ({
 // =========================
 const whatsappLink = computed(() => {
   const phone = '6285225208256'
-  const text = locale.value === 'id'
-    ? `Halo, saya tertarik dengan produk ${displayName.value}`
-    : `Hi, I'm interested in ${displayName.value}`
+
+  const productUrl = canonicalUrl.value +
+    '?utm_source=whatsapp&utm_medium=chat&utm_campaign=product_inquiry'
+
+  const text =
+    locale.value === 'id'
+      ? `Halo! Saya melihat produk "${displayName.value}" di website Sabilajati Mebel Jepara.\n\nBisakah Anda memberikan informasi lebih lanjut?\n\nBerikut link produknya:\n${productUrl}`
+      : `Hi! I saw your product "${displayName.value}" on the Sabilajati Mebel Jepara website.\n\nCould you please tell me more about it?\n\nHere’s the product link:\n${productUrl}`
 
   return `https://wa.me/${phone}?text=${encodeURIComponent(text)}`
 })
