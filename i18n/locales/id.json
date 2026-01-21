@@ -81,5 +81,34 @@
       "description": "Dibuat dengan bahan premium",
       "button": "Lihat Detail"
     }
+  },
+  "faq": {
+    "title": "Pertanyaan yang Sering Diajukan",
+    "items": [
+      {
+        "q": "Apa itu Sabilajati Mebel Jepara?",
+        "a": "Sabilajati Mebel Jepara adalah produsen furniture kayu dari Jepara yang memproduksi meja, kursi, furniture kafe & restoran, furniture sekolah, gazebo, serta furniture custom."
+      },
+      {
+        "q": "Apakah bisa pesan furniture custom?",
+        "a": "Ya. Kami menerima pembuatan furniture custom sesuai desain, ukuran, jenis kayu, dan finishing yang Anda inginkan."
+      },
+      {
+        "q": "Kayu apa saja yang digunakan?",
+        "a": "Kami menggunakan kayu jati, trembesi, mahoni, dan kayu lainnya sesuai kebutuhan produk."
+      },
+      {
+        "q": "Berapa lama proses pengerjaan?",
+        "a": "Waktu produksi rata-rata 2–6 minggu tergantung jenis dan jumlah pesanan."
+      },
+      {
+        "q": "Apakah melayani pengiriman?",
+        "a": "Ya. Kami melayani pengiriman ke seluruh Indonesia dan dapat membantu pengiriman internasional."
+      },
+      {
+        "q": "Bagaimana cara pemesanan?",
+        "a": "Anda dapat menghubungi kami melalui WhatsApp, Instagram, atau halaman Contact di website."
+      }
+    ]
   }
 }

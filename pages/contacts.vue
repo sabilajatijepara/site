@@ -10,7 +10,7 @@
         <div class="text-xl font-bold py-2">{{ $t('Do You Have Question') }}</div>
         <div>{{ $t('Find Answer') }}</div>
         <div class="py-6 w-full">
-          <NuxtLinkLocale to="https://sabilajati.com/faq" class="border-2 border-black rounded-2xl px-4 py-3 hover:bg-black hover:text-white">{{ $t('See FAQ') }}</NuxtLinkLocale>
+          <NuxtLinkLocale to="/faq" class="border-2 border-black rounded-2xl px-4 py-3 hover:bg-black hover:text-white">{{ $t('See FAQ') }}</NuxtLinkLocale>
         </div>
       </div>
       <div class="rounded-2xl px-4 md:px-8 py-6 bg-cyan-100 overflow-hidden">

@@ -81,5 +81,34 @@
       "description": "Crafted with premium materials",
       "button": "View Details"
     }
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "items": [
+      {
+        "q": "What is Sabilajati Mebel Jepara?",
+        "a": "Sabilajati Mebel Jepara is a furniture manufacturer from Jepara specializing in wooden furniture, including tables, chairs, café furniture, school furniture, gazebos, and custom products."
+      },
+      {
+        "q": "Do you accept custom furniture orders?",
+        "a": "Yes. We provide custom furniture based on your design, size, wood type, and finishing preferences."
+      },
+      {
+        "q": "What types of wood do you use?",
+        "a": "We use teak, trembesi, mahogany, and other high-quality woods depending on the product."
+      },
+      {
+        "q": "How long does production take?",
+        "a": "Production usually takes between 2–6 weeks depending on order complexity and quantity."
+      },
+      {
+        "q": "Do you offer shipping?",
+        "a": "Yes. We ship across Indonesia and can assist with international delivery."
+      },
+      {
+        "q": "How can I place an order?",
+        "a": "You can contact us via WhatsApp, Instagram, or the Contact page on our website."
+      }
+    ]
   }
 }

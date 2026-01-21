@@ -76,9 +76,7 @@
 import { ref, computed, watchEffect } from 'vue'
 import { useRoute, navigateTo, createError, useHead, useFetch } from '#imports'
 
-// =========================
 // ROUTE & LOCALE
-// =========================
 const route = useRoute()
 
 const locale = computed(() =>
@@ -87,18 +85,15 @@ const locale = computed(() =>
 
 const slug = computed(() => route.params.slug)
 
-// =========================
+
 // API ENDPOINT
-// =========================
 const apiUrl = computed(() =>
   locale.value === 'id'
     ? `https://api.sabilajati.com/products/${slug.value}`
     : `https://api.sabilajati.com/products/en/${slug.value}`
 )
 
-// =========================
 // FETCH PRODUCT (SSR SAFE)
-// =========================
 const { data: product, pending, error } = await useFetch(apiUrl)
 
 if (error.value) {
@@ -117,9 +112,8 @@ const seoImage = computed(() => {
   return activeImage.value.replace('/upload/', '/upload/f_auto,q_auto/')
 })
 
-// =========================
-// MULTI LANGUAGE CONTENT
-// =========================
+
+// MULTI LANGUAGE
 const displayName = computed(() =>
   locale.value === 'id'
     ? product.value?.name
@@ -132,9 +126,8 @@ const displayDesc = computed(() =>
     : product.value?.desc_en || product.value?.description
 )
 
-// =========================
+
 // AUTO REDIRECT SLUG (SEO SAFETY)
-// =========================
 watchEffect(() => {
   if (!product.value) return
 
@@ -149,9 +142,7 @@ watchEffect(() => {
   }
 })
 
-// =========================
 // SEO
-// =========================
 const canonicalUrl = computed(() =>
   locale.value === 'id'
     ? `https://sabilajati.com/id/products/${slug.value}`

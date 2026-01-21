@@ -10,7 +10,7 @@ export default defineSitemapEventHandler(async () => {
       : undefined
 
     return [
-      // 🇬🇧 English (DEFAULT, TANPA PREFIX)
+      // English (DEFAULT, TANPA PREFIX)
       {
         loc: `/products/${product.slug_en}`,
         lastmod,
