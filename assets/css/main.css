@@ -21,6 +21,23 @@ html, body {
   font-family: "Poppins", sans-serif;
 }
 
+.faq-enter-active,
+.faq-leave-active {
+  transition: all 0.35s ease;
+}
+
+.faq-enter-from,
+.faq-leave-to {
+  opacity: 0;
+  transform: translateY(-6px);
+}
+
+.faq-enter-to,
+.faq-leave-from {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* SVG 
 
 @keyframes fadeInOut {

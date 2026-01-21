@@ -18,12 +18,14 @@
           <span>{{ active === index ? '−' : '+' }}</span>
         </button>
 
-        <div
-          v-show="active === index"
-          class="p-5 pt-0 text-gray-700"
-        >
-          {{ rt(item.a) }}
-        </div>
+        <Transition name="faq">
+          <div
+            v-show="active === index"
+            class="p-5 pt-0 text-gray-700"
+          >
+            {{ rt(item.a) }}
+          </div>
+        </Transition>
       </div>
     </div>
   </section>
