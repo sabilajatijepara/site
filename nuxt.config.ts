@@ -13,8 +13,14 @@ export default defineNuxtConfig({
     '@nuxtjs/sitemap',
   ],
   
+  site: { 
+   url: 'https://sabilajati.com', 
+   name: 'Sabilajati Mebel Jepara' 
+  },
+  
   routeRules: {
     '/categories': { redirect: '/products' },
+    '/contact': { redirecf: '/contacts' },
   },
   
   robots: {
@@ -53,7 +59,7 @@ export default defineNuxtConfig({
   },
   
   sitemap: {
-    hostname: 'https://sabilajati.com', // GANTI domain asli
+    hostname: 'https://sabilajati.com',
     name: "Sabilajati",
     gzip: true,
     xslTips: false,
