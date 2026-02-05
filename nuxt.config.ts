@@ -20,7 +20,8 @@ export default defineNuxtConfig({
   
   routeRules: {
     '/categories': { redirect: '/products' },
-    '/contact': { redirecf: '/contacts' },
+    '/contact': { redirect: '/contacts' },
+    '/blog': { redirect: 'https://blog.falasyam.com' },
   },
   
   robots: {
