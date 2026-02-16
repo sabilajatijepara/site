@@ -20,8 +20,11 @@ export default defineNuxtConfig({
   
   routeRules: {
     '/categories': { redirect: '/products' },
+    '/categories/Sekolah': { redirect: '/categories/institutions' },
+    '/categories/Institutions': { redirect: '/categories/institutions' },
+    '/categories/Cafe': { redirect: '/categories/cafe-resto' },
     '/contact': { redirect: '/contacts' },
-    '/blog': { redirect: 'https://blog.falasyam.com' },
+    '/blog': { redirect: 'https://blog.sabilajati.com' },
   },
   
   robots: {
