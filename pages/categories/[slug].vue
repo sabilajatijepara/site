@@ -28,7 +28,7 @@
     <div class="max-w-6xl mx-auto px-4">
       <div class="py-6"></div>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 gap-y-8">
-        <NuxtLink
+        <NuxtLinkLocale
           v-for="(category, i) in categories"
           :key="i"
           :to="category.link"
@@ -46,7 +46,7 @@
 
           <!-- Teks -->
           <h3 class="text-lg font-semibold text-gray-900">{{ category.name }}</h3>
-        </NuxtLink>
+        </NuxtLinkLocale>
       </div>
     </div>
   </section>
@@ -57,7 +57,7 @@
       <div class="flex justify-between text-sm capitalize font-bold py-2">
         <div class="">{{ titleProducts }}</div>
         <div>
-          <NuxtLink to="/products" class="px-3 py-2 border border-black rounded-full hover:bg-yellow-300 duration-300 transition">ALL PRODUCTS</NuxtLink>
+          <NuxtLinkLocale to="/products" class="px-3 py-2 border border-black rounded-full hover:bg-yellow-300 duration-300 transition">ALL PRODUCTS</NuxtLinkLocale>
         </div>
       </div>
       <div class="py-2"></div>
@@ -109,12 +109,12 @@
               {{ item.name }}
             </h3>
 
-            <NuxtLink
+            <NuxtLinkLocale
               :to="item.link"
               class="bg-yellow-300 hover:bg-gray-200 text-sm text-gray-900 px-6 flex items-center justify-center h-full transition border-l-2 border-black"
             >
               View
-            </NuxtLink>
+            </NuxtLinkLocale>
           </div>
         </div>
       </div>
