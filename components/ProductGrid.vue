@@ -64,6 +64,8 @@
 <script setup>
 const { data: response, pending, error } = await useFetch('https://api.sabilajati.com/products')
 
+const { t, locale } = useI18n()
+
 // Transformasi data agar sesuai dengan struktur yang template kamu harapkan
 const products = computed(() =>
   (response.value?.data || []).slice(0,4).map((item) => ({
