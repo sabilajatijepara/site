@@ -102,12 +102,12 @@
               {{ item.name }}
             </h3>
           
-            <NuxtLink
-              :to="item.link"
+            <NuxtLinkLocale
+              :to="`/products/${item.link}`"
               class="bg-yellow-300 hover:bg-gray-200 text-sm text-gray-900 px-6 flex items-center justify-center h-full transition border-l-2 border-black"
             >
               View
-            </NuxtLink>
+            </NuxtLinkLocale>
           </div>
         </div>
       </div>
@@ -172,6 +172,10 @@
 </template>
 
 <script setup>
+  
+  const { t, locale } = useI18n()
+  
+  
 const categories = [
   {
     name: "Home Living",
@@ -234,10 +238,20 @@ onBeforeUnmount(() => {
 // Transformasi data agar sesuai dengan struktur yang template kamu harapkan
 const allProducts = computed(() =>
   (response.value?.data || []).map(item => ({
-    name: item.name_en,
-    description: item.desc_en,
-    image: item.imageURL?.[0] || '', // pakai gambar pertama
-    link: `/products/${item.slug_en}`,
+    name: locale.value === 'en'
+      ? item.name_en
+      : item.name,
+
+    description: locale.value === 'en'
+      ? item.desc_en
+      : item.desc,
+
+    image: item.imageURL?.[0] || '',
+
+    link: locale.value === 'en'
+      ? item.slug_en
+      : item.slug,
+
     price: item.price
   }))
 )

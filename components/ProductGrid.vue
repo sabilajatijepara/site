@@ -36,9 +36,9 @@
         <div class="flex w-full justify-between">
           <!--<div>Rp {{ item.price.toLocaleString('id-ID') }}</div>-->
           <div class="">
-            <NuxtLink :to="item.link" class="text-sm px-3 py-2 rounded-full bg-white text-black hover:bg-gray-200 transition delay-150">
+            <NuxtLinkLocale :to="`/products/${item.link}`" class="text-sm px-3 py-2 rounded-full bg-white text-black hover:bg-gray-200 transition delay-150">
               View Product
-            </NuxtLink>
+            </NuxtLinkLocale>
           </div>
         </div>
       </div>
@@ -67,10 +67,10 @@ const { data: response, pending, error } = await useFetch('https://api.sabilajat
 // Transformasi data agar sesuai dengan struktur yang template kamu harapkan
 const products = computed(() =>
   (response.value?.data || []).slice(0,4).map((item) => ({
-    name: item.name_en,
-    description: item.desc_en,
-    image: item.imageURL[0] || '', // pakai gambar pertama
-    link: `/products/${item.slug_en}`, // buat link dinamis berdasarkan slug, sementara ID
+    name: locale.value === 'en' ? item.name_en : item.name,
+    description: locale.value === 'en' ? item.desc_en : item.desc,
+    image: item.imageURL?.[0] || '',
+    link: locale.value === 'en' ? item.slug_en : item.slug,
     price: item.price
   }))
 )

@@ -110,7 +110,7 @@
             </h3>
 
             <NuxtLinkLocale
-              :to="item.link"
+              :to="`/products/${item.link}`"
               class="bg-yellow-300 hover:bg-gray-200 text-sm text-gray-900 px-6 flex items-center justify-center h-full transition border-l-2 border-black"
             >
               View
@@ -183,6 +183,8 @@
 import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 import { useRoute } from 'vue-router'
 
+const { t, locale } = useI18n()
+
 // === KATEGORI HARD-CODED ===
 const categories = [
   {
@@ -252,10 +254,10 @@ onBeforeUnmount(() => window.removeEventListener('resize', updatePerPage))
 // === TRANSFORM DATA ===
 const allProducts = computed(() =>
   (categoryData.value?.products || []).map(item => ({
-    name: item.name_en,
-    description: item.desc_en,
+    name: locale.value === 'en' ? item.name_en : item.name,
+    description: locale.value === 'en' ? item.desc_en : item.desc,
     image: item.imageURL?.[0] || '',
-    link: `/products/${item.slug_en}`,
+    link: locale.value === 'en' ? item.slug_en : item.slug,
     price: item.price
   }))
 )
